@@ -12,122 +12,71 @@
       }
     </style>
   </head>
-  <body>
-    <header class="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 md:hidden">
-      <div class="flex justify-between px-4 py-4">
-        <div class="flex flex-col justify-start">
-          <h1 class="text-xl font-bold text-blue-700">Rafed Ali Beier</h1>
-        </div>
-        <button id="menu-toggle" class="text-gray-600 focus:outline-none">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      </div>
-      <nav id="mobile-menu" class="hidden px-4 pb-4">
-        <ul class="space-y-3 text-lg">
-          <li>
-            <a href="#forside" class="block text-gray-700 hover:text-blue-600"
-              >Forside</a
-            >
-          </li>
-          <li>
-            <a href="#om" class="block text-gray-700 hover:text-blue-600">Om mig</a>
-          </li>
-          <li>
-            <a href="#erfaring" class="block text-gray-700 hover:text-blue-600"
-              >Erfaring</a
-            >
-          </li>
-          <li>
-            <a href="#techstack" class="block text-gray-700 hover:text-blue-600"
-              >Tech stack</a
-            >
-          </li>
-          <li>
-            <a href="#uddannelse" class="block text-gray-700 hover:text-blue-600"
-              >Uddannelse</a
-            >
-          </li>
-          <li>
-            <a href="#projekter" class="block text-gray-700 hover:text-blue-600"
-              >Projekter</a
-            >
-          </li>
-          <li>
-            <a href="#kontakt" class="block text-gray-700 hover:text-blue-600"
-              >Kontakt</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
+
+<header class="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 md:hidden">
+  <div class="flex justify-between px-4 py-4">
+    <div class="flex flex-col justify-start">
+      <h1 class="text-xl font-bold text-blue-700">Rafed Ali Beier</h1>
+    </div>
+    <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="hidden px-4 pb-4">
+    <ul class="space-y-3 text-lg">
+      <li><a href="#forside" class="block text-gray-700 hover:text-blue-600">Forside</a></li>
+      <li><a href="#om" class="block text-gray-700 hover:text-blue-600">Om mig</a></li>
+		<li><a href="#erfaring" class="block text-gray-700 hover:text-blue-600">Erfaringer</a></li>
+		<li><a href="#techstack" class="block text-gray-700 hover:text-blue-600">Erfaringer</a></li>
+      <li><a href="#uddannelse" class="block text-gray-700 hover:text-blue-600">Uddannelse</a></li>
+      <li><a href="#projekter" class="block text-gray-700 hover:text-blue-600">Projekter</a></li>
+      <li><a href="#kontakt" class="block text-gray-700 hover:text-blue-600">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
 
     <div class="flex pt-20 md:pt-0">
       <!-- SIDEBAR (Desktop) -->
-      <nav
-        class="hidden md:block w-64 bg-white shadow-lg fixed top-0 left-0 h-full p-6 space-y-6 z-50"
-      >
+      <nav class="hidden md:block w-64 bg-white shadow-lg fixed top-0 left-0 h-full p-6 space-y-6 z-50">
         <h1 class="text-2xl font-bold text-blue-700">Rafed Ali Beier</h1>
         <ul class="space-y-3 text-lg">
           <li>
-            <a
-              href="#forside"
-              class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors"
-              >Forside</a
-            >
+            <a href="#forside" class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors">
+              Forside
+            </a>
           </li>
           <li>
-            <a
-              href="#om"
-              class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors"
-              >Om mig</a
-            >
+            <a href="#om" class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors">
+              Om mig
+            </a>
+          </li>
+				<li>
+            <a href="#erfaring" class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors">
+              Erfaring
+            </a>
+          </li>
+			<li>
+            <a href="#uddannelse" class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors">
+              Uddannelse
+            </a>
+          </li>
+			<li>
+            <a href="#techstack" class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors">
+              Tech stack
+            </a>
           </li>
           <li>
-            <a
-              href="#erfaring"
-              class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors"
-              >Erfaring</a
-            >
+            <a href="#projekter" class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors">
+              Projekter
+            </a>
           </li>
           <li>
-            <a
-              href="#uddannelse"
-              class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors"
-              >Uddannelse</a
-            >
-          </li>
-          <li>
-            <a
-              href="#techstack"
-              class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors"
-              >Tech stack</a
-            >
-          </li>
-          <li>
-            <a
-              href="#projekter"
-              class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors"
-              >Projekter</a
-            >
-          </li>
-          <li>
-            <a
-              href="#kontakt"
-              class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors"
-              >Kontakt</a
-            >
+            <a href="#kontakt" class="relative text-gray-700 hover:text-blue-600 before:absolute before:bottom-0 before:left-0 before:h-0.5 before:w-0 hover:before:w-full before:bg-blue-600 before:transition-all transition-colors">
+              Kontakt
+            </a>
           </li>
         </ul>
       </nav>
@@ -135,379 +84,220 @@
       <!-- HOVEDINDHOLD -->
       <main class="w-full md:ml-64">
         <!-- FORSIDE -->
-        <section
-          id="forside"
-          data-aos="fade-in"
-          class="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-600 to-indigo-700 text-white px-4"
-        >
+        <section id="forside" data-aos="fade-in" class="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-600 to-indigo-700 text-white px-4">
           <h2 class="text-5xl font-extrabold mb-4">Rafed Ali Beier</h2>
-          <p class="text-xl mb-6">
-            Datamatikerstuderende • Fullstack interesseret • Bygger digitale
-            løsninger
-          </p>
-          <a
-            href="#om"
-            class="mt-52 animate-bounce text-white hover:text-blue-200 transition"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-10 w-10"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
+          <p class="text-xl mb-6">Datamatikerstuderende • Fullstack interesseret • Bygger digitale løsninger</p>
           </a>
+	<a href="#om" class="mt-52 animate-bounce text-white hover:text-blue-200 transition">
+  	<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+  	</svg>
+	</a>
         </section>
 
-        <!-- OM MIG -->
-        <section
-          id="om"
-          data-aos="fade-up"
-          class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200"
-        >
-          <div class="max-w-4xl mx-auto text-center">
-            <img
-              src="Me.jpg"
-              alt="Rafed Ali Beier – profilbillede"
-              class="w-60 h-60 rounded-full mx-auto mb-6 shadow-lg object-cover"
-            />
-            <h2 class="text-3xl font-bold mb-6 text-blue-700">Om mig</h2>
-            <p class="text-gray-700 text-justify">
-              Jeg er datamatikerstuderende med interesse for fullstack-udvikling og
-              digitale løsninger, der skaber værdi. Jeg har en struktureret og
-              løsningsorienteret tilgang til mit arbejde, og jeg trives bedst,
-              når der er fokus på både kodekvalitet og brugervenlighed.
-              <br /><br />
-              Samarbejde er vigtigt for mig, og jeg bidrager gerne aktivt i teams,
-              hvor man deler viden og bygger noget sammen. Nysgerrighed er en
-              drivkraft i mit studie og mine projekter. Jeg undersøger gerne nye
-              teknologier og går i dybden, når noget skal forstås ordentligt.
-              <br /><br />
-              Når jeg ikke sidder foran skærmen, nyder jeg at bruge tid med familie
-              og venner, finde ro i det enkle og holde mig mentalt skarp. Jeg tror
-              på, at balance mellem det tekniske og det menneskelige gør mig til
-              en bedre udvikler.
-            </p>
+<!-- OM MIG -->
+<section id="om" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
+  <div class="max-w-4xl mx-auto text-center">
+    <img src="Me.jpg" alt="Rafed Ali Beier – profilbillede" class="w-60 h-60 rounded-full mx-auto mb-6 shadow-lg object-cover" />
+    <h2 class="text-3xl font-bold mb-6 text-blue-700">Om mig</h2>
+    <p class="text-gray-700 text-justify">
+      Jeg er datamatikerstuderende med interesse for fullstack-udvikling og digitale løsninger, der skaber værdi. Jeg har en struktureret og løsningsorienteret tilgang til mit arbejde, og jeg trives bedst, når der er fokus på både kodekvalitet og brugervenlighed.
+      <br><br>
+      Samarbejde er vigtigt for mig, og jeg bidrager gerne aktivt i teams, hvor man deler viden og bygger noget sammen. Nysgerrighed er en drivkraft i mit studie og mine projekter. Jeg undersøger gerne nye teknologier og går i dybden, når noget skal forstås ordentligt.
+      <br><br>
+      Når jeg ikke sidder foran skærmen, nyder jeg at bruge tid med familie og venner, finde ro i det enkle og holde mig mentalt skarp. Jeg tror på, at balance mellem det tekniske og det menneskelige gør mig til en bedre udvikler.
+    </p>
 
-            <div class="mt-12 text-left">
-              <h3 class="text-2xl font-semibold text-blue-700 mb-4">
-                Baggrund, motivation og faglige interesser
-              </h3>
-              <p class="text-gray-700 text-justify">
-                Jeg er 28 år og bor i Vejen Kommune sammen med min kone. Efter nogle
-                år som ergoterapeut valgte jeg at skifte retning for at forfølge
-                min passion for IT og softwareudvikling. Skiftet til datamatikeruddannelsen
-                har været både meningsfuldt og motiverende, og jeg nyder at kunne
-                kombinere min praktiske erfaring med en stærk teknisk forståelse.
-              </p>
-            </div>
+<div class="mt-12 text-left">
+  <h3 class="text-2xl font-semibold text-blue-700 mb-4">Baggrund, motivation og faglige interesser</h3>
+  <p class="text-gray-700 text-justify">
+    Jeg er 28 år og bor i Vejen Kommune sammen med min kone. Efter nogle år som ergoterapeut valgte jeg at skifte retning for at forfølge min passion for IT og softwareudvikling. Skiftet til datamatikeruddannelsen har været både meningsfuldt og motiverende, og jeg nyder at kunne kombinere min praktiske erfaring med en stærk teknisk forståelse.
+  </p>
+</div>
 
-            <div class="mt-12 text-left">
-              <h3 class="text-2xl font-semibold text-blue-700 mb-4">Teknologier</h3>
-              <p class="text-gray-700 text-justify">
-                Jeg interesserer mig særligt for systemudvikling og for hvordan teknologi
-                kan skabe brugbare og effektive løsninger i praksis. Jeg arbejder gerne
-                i både frontend og backend, særligt med teknologier som C#, ASP.NET,
-                SQL og moderne webteknologier. Men vigtigst for mig er ikke tech-stacken,
-                det er, at løsningen giver mening for brugeren og er bygget ordentligt.
-              </p>
-            </div>
-          </div>
-        </section>
+    <div class="mt-12 text-left">
+      <h3 class="text-2xl font-semibold text-blue-700 mb-4">Teknologier</h3>
+      <p class="text-gray-700 text-justify">
+        Jeg interesserer mig særligt for systemudvikling og for hvordan teknologi kan skabe brugbare og effektive løsninger i praksis. Jeg arbejder gerne i både frontend og backend, særligt med teknologier som C#, ASP.NET, SQL og moderne webteknologier. Men vigtigst for mig er ikke tech-stacken, det er, at løsningen giver mening for brugeren og er bygget ordentligt.
+      </p>
+    </div>
+  </div>
+</section>
 
-        <!-- ERFARING -->
-        <section
-          id="erfaring"
-          data-aos="fade-up"
-          class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200"
-        >
-          <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-6 text-blue-700 text-center">Erfaring</h2>
+<section id="erfaring" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-blue-700 text-center">Erfaring</h2>
 
-            <div
-              class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6"
-            >
-              <img
-                src="AlfaLaval.jpg"
-                alt="Alfa Laval logo"
-                class="w-32 h-auto object-contain mt-2"
-              />
+    <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6">
+      <img src="AlfaLaval.jpg" alt="Alfa Laval logo" class="w-32 h-auto object-contain mt-2" />
 
-              <div>
-                <h3 class="text-xl font-semibold mb-1">Alfa Laval Kolding</h3>
-                <p class="italic text-gray-600 mb-2">Kolding, Region Syddanmark</p>
-                <p class="font-medium mb-1">Studentermedhjælper – Order Handling</p>
-                <p class="text-gray-700 mb-4">Deltid | apr. 2024 – nu</p>
+      <div>
+        <h3 class="text-xl font-semibold mb-1">Alfa Laval Kolding</h3>
+        <p class="italic text-gray-600 mb-2">Kolding, Region Syddanmark</p>
+        <p class="font-medium mb-1">Studentermedhjælper – Order Handling</p>
+        <p class="text-gray-700 mb-4">Deltid | apr. 2024 – nu</p>
 
-                <p class="text-gray-700 text-justify leading-relaxed max-w-xl">
-                  Som studentermedhjælper hos Alfa Laval spiller jeg en central rolle i
-                  optimering af ordrehåndtering og forbedring af kundesupport. Mine
-                  opgaver inkluderer administration af databaser, vedligeholdelse af
-                  SharePoint-site samt overvågning af ERP-systemet for at sikre effektiv
-                  ordrebehandling. Jeg arbejder også aktivt med Power BI og Power
-                  Automate til at udarbejde datadrevne rapporter, automatisere processer
-                  og understøtte strategiske beslutninger. <br /><br />
-                  Gennem samarbejde med tværfunktionelle teams og interessenter
-                  identificerer jeg muligheder for optimering af arbejdsprocesser og
-                  IT-systemer, hvilket øger effektiviteten og kundetilfredsheden.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <p class="text-gray-700 text-justify leading-relaxed max-w-xl">
+          Som studentermedhjælper hos Alfa Laval spiller jeg en central rolle i optimering af ordrehåndtering og forbedring af kundesupport. Mine opgaver inkluderer administration af databaser, vedligeholdelse af SharePoint-site samt overvågning af ERP-systemet for at sikre effektiv ordrebehandling. Jeg arbejder også aktivt med Power BI og Power Automate til at udarbejde datadrevne rapporter, automatisere processer og understøtte strategiske beslutninger. <br><br> Gennem samarbejde med tværfunktionelle teams og interessenter identificerer jeg muligheder for optimering af arbejdsprocesser og IT-systemer, hvilket øger effektiviteten og kundetilfredsheden.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- UDDANNELSE -->
-        <section
-          id="uddannelse"
-          data-aos="fade-up"
-          class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200"
-        >
-          <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-6 text-blue-700 text-center">Uddannelse</h2>
 
-            <div
-              class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6"
-            >
-              <img
-                src="UCL.jpg"
-                alt="UCL logo"
-                class="w-32 h-auto object-contain"
-              />
+<!-- UDDANNELSE -->
+<section id="uddannelse" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-blue-700 text-center">Uddannelse</h2>
 
-              <div>
-                <h3 class="text-xl font-semibold mb-1">Datamatiker</h3>
-                <p class="italic text-gray-600 mb-2">
-                  UCL Erhvervsakademi og Professionshøjskole
-                </p>
-                <p class="font-medium mb-1">februar 2024 – juni 2026</p>
+    <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6">
+      <img src="UCL.jpg" alt="UCL logo" class="w-32 h-auto object-contain"/>
 
-                <p class="text-gray-700 text-justify mb-4 leading-relaxed max-w-xl">
-                  Uddannelsen fokuserer på udvikling og programmering af IT-systemer,
-                  der dækker hele processen fra kravspecifikation til konstruktion,
-                  kvalitetssikring og levering.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div>
+        <h3 class="text-xl font-semibold mb-1">Datamatiker</h3>
+        <p class="italic text-gray-600 mb-2">UCL Erhvervsakademi og Professionshøjskole</p>
+        <p class="font-medium mb-1">februar 2024 – juni 2026</p>
 
-        <!-- TECH STACK -->
-        <section
-          id="techstack"
-          class="py-10 bg-gray-50 scroll-mt-32 px-4"
-          data-aos="fade-up"
-        >
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">
-              Tech Stack
-            </h2>
+        <p class="text-gray-700 text-justify mb-4 leading-relaxed max-w-xl">
+          Uddannelsen fokuserer på udvikling og programmering af IT-systemer, der dækker hele processen fra kravspecifikation til konstruktion, kvalitetssikring og levering.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div
-              class="grid grid-cols-4 gap-6 justify-center max-w-xl mx-auto"
-            >
-              <!-- 1. C# -->
-              <div
-                class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-                  alt="C#"
-                  class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110 m-4"
-                />
-                <div
-                  class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4"
-                >
-                  <p class="text-white text-sm font-medium">C# – Programmeringssprog</p>
-                </div>
-              </div>
+<section class="py-10 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Tech Stack</h2>
 
-              <!-- 2. .NET Core -->
-              <div
-                class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"
-                  alt=".NET Core"
-                  class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110 m-4"
-                />
-                <div
-                  class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4"
-                >
-                  <p class="text-white text-sm font-medium">.NET Core – Framework</p>
-                </div>
-              </div>
+    <div class="grid grid-cols-4 gap-6 justify-center max-w-xl mx-auto">
+      <!-- Første række (4 ikoner) -->
+      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110 m-4" />
+        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
+          <p class="text-white text-sm font-medium">C# – Programmeringssprog</p>
+        </div>
+      </div>
 
-              <!-- 3. Blazor -->
-              <div
-                class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blazor/blazor-original.svg"
-                  alt="Blazor"
-                  class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110 m-4"
-                />
-                <div
-                  class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4"
-                >
-                  <p class="text-white text-sm font-medium">Blazor – Web framework</p>
-                </div>
-              </div>
+      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET Core" class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110 m-4" />
+        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
+          <p class="text-white text-sm font-medium">.NET Core – Framework</p>
+        </div>
+      </div>
 
-              <!-- 4. SQL Custom SVG -->
-              <div
-                class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex flex-col items-center justify-center space-y-2 p-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="64"
-                  height="64"
-                  viewBox="0 0 64 64"
-                  fill="none"
-                  stroke="#D26B2F"
-                  stroke-width="4"
-                  stroke-linejoin="round"
-                  class="transition-transform duration-300 group-hover:scale-110 m-4"
-                >
-                  <ellipse cx="32" cy="12" rx="24" ry="10" />
-                  <path d="M8 12v12c0 5.523 10.745 10 24 10s24-4.477 24-10V12" />
-                  <path d="M8 24v12c0 5.523 10.745 10 24 10s24-4.477 24-10V24" />
-                  <path d="M8 36v12c0 5.523 10.745 10 24 10s24-4.477 24-10V36" />
-                </svg>
-                <p class="text-gray-700 text-center text-sm font-semibold">
-                  SQL – Databasesprog
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blazor/blazor-original.svg" alt="Blazor" class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110 m-4" />
+        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
+          <p class="text-white text-sm font-medium">Blazor – Web framework</p>
+        </div>
+      </div>
 
-        <!-- UNDER LÆRING -->
-        <section
-          id="underlaering"
-          class="py-10 bg-gray-50 scroll-mt-32 px-4 border-t border-gray-300"
-          data-aos="fade-up"
-        >
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">
-              Under læring
-            </h2>
+<div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex flex-col items-center justify-center space-y-2 p-4">
+  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#D26B2F" stroke-width="4" stroke-linejoin="round" class="transition-transform duration-300 group-hover:scale-110 m-4">
+    <ellipse cx="32" cy="12" rx="24" ry="10" />
+    <path d="M8 12v12c0 5.523 10.745 10 24 10s24-4.477 24-10V12" />
+    <path d="M8 24v12c0 5.523 10.745 10 24 10s24-4.477 24-10V24" />
+    <path d="M8 36v12c0 5.523 10.745 10 24 10s24-4.477 24-10V36" />
+  </svg>
+  <div class="text-orange-600 font-semibold text-lg select-none">SQL</div>
+  <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4 m-4">
+    <p class="text-white text-sm font-medium">SQL – Database queries</p>
+  </div>
+</div>
 
-            <div
-              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-xl mx-auto"
-            >
-              <div
-                class="flex flex-col items-center justify-center p-4 bg-white rounded-xl shadow-lg"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                  alt="JavaScript"
-                  class="w-16 h-16 mb-4"
-                />
-                <p class="text-gray-700 text-center font-semibold">JavaScript</p>
-              </div>
 
-              <div
-                class="flex flex-col items-center justify-center p-4 bg-white rounded-xl shadow-lg"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                  alt="CSS3"
-                  class="w-16 h-16 mb-4"
-                />
-                <p class="text-gray-700 text-center font-semibold">CSS3</p>
-              </div>
 
-              <div
-                class="flex flex-col items-center justify-center p-4 bg-white rounded-xl shadow-lg"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                  alt="HTML5"
-                  class="w-16 h-16 mb-4"
-                />
-                <p class="text-gray-700 text-center font-semibold">HTML5</p>
-              </div>
+      <!-- Anden række (3 ikoner) -->
+      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110 m-4" />
+        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
+          <p class="text-white text-sm font-medium">HTML5 – Struktur & semantik</p>
+        </div>
+      </div>
 
-              <div
-                class="flex flex-col items-center justify-center p-4 bg-white rounded-xl shadow-lg"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                  alt="React"
-                  class="w-16 h-16 mb-4"
-                />
-                <p class="text-gray-700 text-center font-semibold">React</p>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110 m-4" />
+        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
+          <p class="text-white text-sm font-medium">CSS3 – Styling & layout</p>
+        </div>
+      </div>
+
+      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110 m-4" />
+        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
+          <p class="text-white text-sm font-medium">Docker – Container platform</p>
+        </div>
+      </div>
+
+<section class="py-10 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Under læring</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-gray-50">
+        <img src="images/react-logo.png" alt="React" class="w-full h-full object-contain p-4 transition-transform duration-300 group-hover:scale-110" />
+        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-2 m-4">
+          <p class="text-white text-sm font-medium">React – Frontend framework</p>
+        </div>
+      </div>
+
+      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-gray-50">
+        <img src="images/javascript-logo.png" alt="JavaScript" class="w-full h-full object-contain p-4 transition-transform duration-300 group-hover:scale-110" />
+        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-2 m-4">
+          <p class="text-white text-sm font-medium">JavaScript – Dynamik & logik</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         <!-- PROJEKTER -->
-        <section
-          id="projekter"
-          data-aos="fade-up"
-          class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200"
-        >
-          <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-6 text-blue-700 text-center">Projekter</h2>
-
-            <div
-              class="space-y-8"
-            >
-              <div>
-                <h3 class="text-xl font-semibold mb-2">Projekt X</h3>
+        <section id="projekter" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
+          <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Projekter</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-white rounded-lg shadow p-6 hover:shadow-2xl hover:-translate-y-1 transform transition duration-300">
+                <h3 class="text-xl font-semibold mb-2">Alfa Laval Kolding – Ferieplanlægningssystem</h3>
                 <p class="text-gray-700 text-justify">
-                  Beskrivelse af projekt X med fokus på teknologi og resultater.
+                  Som en del af mit studie udviklede mit projektteam og jeg et digitalt ferieplanlægningssystem til lageret hos Alfa Laval i Kolding.
+                  <br><br>
+                  Systemet skulle reducere tidsforbruget på ferieplanlægning og sikre en retfærdig fordeling af ferie. Projektet omfattede udvikling af en brugervenlig grænseflade, design af en algoritme til ferieallokering samt implementering af en database, der tager højde for bemandings- og kompetencekrav i virksomheden.
                 </p>
               </div>
-
-              <div>
-                <h3 class="text-xl font-semibold mb-2">Projekt Y</h3>
+              <div class="bg-white rounded-lg shadow p-6 hover:shadow-2xl hover:-translate-y-1 transform transition duration-300">
+                <h3 class="text-xl font-semibold mb-2">Webapplikation til rejsebureauet GoTurz</h3>
                 <p class="text-gray-700 text-justify">
-                  Beskrivelse af projekt Y med fokus på teknologi og resultater.
+                  Udviklede en fuldt funktionel prototype af en rejseplatform i ASP.NET Core og Blazor med integration til fly- og hotel-API’er. Applikationen præsenterer komplette rejsepakker med samlet pris, tilbyder brugeroprettelse, login, rollebaseret adgang, bookingsystem, og realtidschat.
+                  <br><br>
+                  Backend er baseret på SQL Server og Entity Framework, hostet i Microsoft Azure. Her har der også været fokus på UI/UX, sikkerhed og skalerbarhed.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- KONTAKT -->
-        <section
-          id="kontakt"
-          data-aos="fade-up"
-          class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200"
-        >
-          <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6 text-blue-700">Kontakt</h2>
-            <p class="text-gray-700 mb-4">
-              Du kan kontakte mig via email på <a href="mailto:rafed@example.com" class="text-blue-600 underline">rafed@example.com</a> eller telefon
-              på <a href="tel:+4512345678" class="text-blue-600 underline">+45 12 34 56 78</a>.
-            </p>
-            <p class="text-gray-700">
-              Jeg ser frem til at høre fra dig!
-            </p>
-          </div>
-        </section>
-      </main>
-    </div>
+
+<section id="kontakt" class="bg-blue-700 py-20 px-4 border-t border-gray-200 text-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Kontakt</h2>
+    <p class="mb-4">
+      Du kan kontakte mig på e-mail: 
+      <a href="mailto:rafedalibeier@gmail.com" class="underline">rafedalibeier@gmail.com</a> 
+      eller via 
+      <a href="https://www.linkedin.com/in/rafed-ali-beier-4555a3150/" target="_blank" class="underline">LinkedIn</a>.
+    </p>
+  </div>
+</section>
+
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init();
+      AOS.init({ duration: 500, once: false });
 
-      // Toggle mobilmenu
-      const menuToggle = document.getElementById('menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+      document.getElementById("menu-toggle").addEventListener("click", function () {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
       });
     </script>
   </body>
