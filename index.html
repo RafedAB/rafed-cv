@@ -141,22 +141,25 @@
         </ul>
       </nav>
 <style>
-nav a[aria-current="page"] {
-  font-weight: normal; /* Fjern fed, hvis du ikke ønsker det */
-  position: relative;
-  color: #2563eb; /* Blå farve */
-}
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
 
-nav a[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px; /* Afstand fra teksten */
-  width: 100%;
-  height: 2px;
-  background-color: #2563eb; /* Blå understregning */
-  border-radius: 1px;
-}
+window.addEventListener('scroll', () => {
+  let currentSection = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (pageYOffset >= sectionTop) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.removeAttribute('aria-current');
+    if (link.getAttribute('href') === `#${currentSection}`) {
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+});
 </style>
 
       <!-- HOVEDINDHOLD -->
