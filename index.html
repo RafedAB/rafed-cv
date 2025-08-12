@@ -91,30 +91,36 @@
   const navLinks = document.querySelectorAll('.nav-link'); // Changed to use class instead of 'nav a'
 
   function updateActiveLink() {
-    let current = '';
+  let current = '';
+  const scrollY = window.scrollY;
+  
+  // Find current section
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.offsetHeight;
     
-    // Find current section
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150; // Adjusted offset
-      const sectionHeight = section.offsetHeight;
-      
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
-      }
-    });
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute('id');
+    }
+  });
 
-    // Update nav links
-    navLinks.forEach(link => {
-      link.classList.remove('font-bold', 'text-blue-600');
-      link.removeAttribute('aria-current');
-      
-      const href = link.getAttribute('href');
-      if (href === '#' + current) {
-        link.classList.add('font-bold', 'text-blue-600');
-        link.setAttribute('aria-current', 'page');
-      }
-    });
+  // If we're at the very top, default to 'forside'
+  if (scrollY < 50) {
+    current = 'forside';
   }
+
+  // Update nav links
+  navLinks.forEach(link => {
+    link.classList.remove('font-bold', 'text-blue-600');
+    link.removeAttribute('aria-current');
+    
+    const href = link.getAttribute('href');
+    if (href && href === '#' + current) {
+      link.classList.add('font-bold', 'text-blue-600');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+}
 
   // Handle click events for smooth scrolling and immediate highlighting
   navLinks.forEach(link => {
@@ -148,40 +154,44 @@
 </script>
 
 <style>
-  .nav-link {
-    position: relative;
-    display: inline-block;
-    color: #4B5563;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: #2563EB;
-  }
-  
-  .nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    height: 2px;
-    width: 0;
-    background-color: #2563EB;
-    transition: width 0.3s ease;
-  }
-  
-  .nav-link:hover::before {
-    width: 100%;
-  }
-  
-  /* Active state styling */
-  .nav-link.font-bold {
-    color: #2563EB;
-  }
-  
-  .nav-link.font-bold::before {
-    width: 100%;
-  }
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: #4B5563 !important;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #2563EB !important;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #2563EB;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+/* Active state styling */
+.nav-link.font-bold,
+.nav-link.text-blue-600 {
+  color: #2563EB !important;
+  font-weight: 700 !important;
+}
+
+.nav-link.font-bold::before,
+.nav-link.text-blue-600::before {
+  width: 100%;
+}
 </style>
 
 
