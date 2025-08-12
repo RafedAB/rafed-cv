@@ -340,50 +340,15 @@
   </div>
 </section>
 
-<style>
-  .btn-filter {
-    padding: 0.5rem 1rem;
-    border-radius: 0.375rem;
-    border: 1px solid #d1d5db;
-    color: #374151;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .btn-filter:hover {
-    background-color: #f3f4f6;
-  }
-  .btn-filter.active {
-    background-color: #2563eb;
-    color: white;
-    border-color: #2563eb;
-  }
-
-  .project-card {
-    overflow: hidden;
-    opacity: 1;
-    height: auto;
-    margin-bottom: 1.5rem;
-    transition: opacity 0.4s ease, height 0.4s ease, margin 0.4s ease, padding 0.4s ease;
-  }
-  .project-card.hidden {
-    opacity: 0;
-    height: 0 !important; /* !important for override */
-    margin: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    pointer-events: none;
-  }
-</style>
-		  
 <section id="projekter" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
   <div class="max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Projekter</h2>
 
     <!-- Filter knapper -->
     <div class="flex justify-center mb-12 space-x-6">
-      <button onclick="filterProjects('all')" class="btn-filter active">Alle</button>
-      <button onclick="filterProjects('tech')" class="btn-filter">Tech Projekter</button>
-      <button onclick="filterProjects('bi')" class="btn-filter">Business Intelligence Projekter</button>
+      <button onclick="filterProjects('all', event)" class="btn-filter active">Alle</button>
+      <button onclick="filterProjects('tech', event)" class="btn-filter">Tech Projekter</button>
+      <button onclick="filterProjects('bi', event)" class="btn-filter">Business Intelligence Projekter</button>
     </div>
 
     <!-- Projekter container -->
@@ -452,18 +417,13 @@
     const projects = document.querySelectorAll('.project-card');
 
     projects.forEach(proj => {
-      // Før animation: få højde på elementet, hvis synligt
       const fullHeight = proj.scrollHeight + "px";
 
       if (category === 'all' || proj.classList.contains(category)) {
-        // Fjern hidden med animation
-        proj.style.display = "block"; // sørg for element er blok for at kunne måle højde
-
-        // Sæt højde til 0 for at animere fra skjult til synlig
+        proj.style.display = "block";
         proj.style.height = "0px";
         proj.classList.remove('hidden');
 
-        // Giv tid til paint, sæt til fuld højde for at animere slide down
         setTimeout(() => {
           proj.style.height = fullHeight;
           proj.style.opacity = "1";
@@ -473,13 +433,11 @@
           proj.style.pointerEvents = "auto";
         }, 10);
 
-        // Efter animation: nulstil height til auto, så den tilpasser dynamisk
         setTimeout(() => {
           proj.style.height = "auto";
         }, 410);
 
       } else {
-        // Skjul med animation - sæt højde og opacity til 0
         proj.style.height = fullHeight;
 
         setTimeout(() => {
@@ -491,7 +449,6 @@
           proj.style.pointerEvents = "none";
         }, 10);
 
-        // Efter animation: skjul element helt
         setTimeout(() => {
           proj.classList.add('hidden');
           proj.style.display = "none";
@@ -499,7 +456,9 @@
       }
     });
   }
-  filterProjects('all', { target: document.querySelector('.btn-filter.active') });
+
+  // Kør filter for 'all' ved indlæsning og simuler klik for korrekt event
+  document.querySelector('.btn-filter.active').click();
 </script>
 
 
