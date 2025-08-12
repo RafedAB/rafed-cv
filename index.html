@@ -217,92 +217,133 @@
 </section>
 
 
+<style>
+  .shadow-top {
+    box-shadow:
+      0 -6px 10px -4px rgba(0, 0, 0, 0.4),
+      0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
 <section id="techstack" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Tech Stack</h2>
 
-    <div class="grid grid-cols-4 gap-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-4 gap-8 max-w-7xl mx-auto">
       <!-- Første række (4 ikoner) -->
-      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
-        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
-          <p class="text-white text-sm font-medium">C# – Programmeringssprog</p>
+      <div class="relative w-40 h-auto mx-auto rounded-xl shadow-top bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="w-24 h-24 object-contain mb-4" />
+        <div class="text-center">
+          <h4 class="text-lg font-bold text-gray-900">C#</h4>
+          <p class="text-gray-600 text-sm mt-1">Programmeringssprog</p>
         </div>
       </div>
 
-      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET Core" class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
-        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
-          <p class="text-white text-sm font-medium">.NET Core – Framework</p>
+      <div class="relative w-40 h-auto mx-auto rounded-xl shadow-top bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET Core" class="w-24 h-24 object-contain mb-4" />
+        <div class="text-center">
+          <h4 class="text-lg font-bold text-gray-900">.NET Core</h4>
+          <p class="text-gray-600 text-sm mt-1">Framework</p>
         </div>
       </div>
 
-      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blazor/blazor-original.svg" alt="Blazor" class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
-        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
-          <p class="text-white text-sm font-medium">Blazor – Web framework</p>
+      <div class="relative w-40 h-auto mx-auto rounded-xl shadow-top bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blazor/blazor-original.svg" alt="Blazor" class="w-24 h-24 object-contain mb-4" />
+        <div class="text-center">
+          <h4 class="text-lg font-bold text-gray-900">Blazor</h4>
+          <p class="text-gray-600 text-sm mt-1">Web framework</p>
         </div>
       </div>
 
-      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex flex-col items-center justify-center space-y-2 p-4">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#D26B2F" stroke-width="4" stroke-linejoin="round" class="transition-transform duration-300 group-hover:scale-110">
+      <div class="relative w-40 h-auto mx-auto rounded-xl shadow-top bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#D26B2F" stroke-width="4" stroke-linejoin="round" class="mb-4 transition-transform duration-300 group-hover:scale-110">
           <ellipse cx="32" cy="12" rx="24" ry="10" />
           <path d="M8 12v12c0 5.523 10.745 10 24 10s24-4.477 24-10V12" />
           <path d="M8 24v12c0 5.523 10.745 10 24 10s24-4.477 24-10V24" />
           <path d="M8 36v12c0 5.523 10.745 10 24 10s24-4.477 24-10V36" />
         </svg>
-        <div class="text-orange-600 font-semibold text-lg select-none">SQL</div>
-        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
-          <p class="text-white text-sm font-medium">SQL – Database queries</p>
-        </div>
+        <div class="text-orange-600 font-semibold text-lg select-none mb-1">SQL</div>
+        <p class="text-gray-600 text-sm text-center">Database queries</p>
       </div>
     </div>
 
     <!-- Anden række (3 ikoner) -->
-    <div class="grid grid-cols-3 gap-6 max-w-7xl mx-auto mt-10">
-      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
-        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
-          <p class="text-white text-sm font-medium">HTML5 – Struktur & semantik</p>
+    <div class="grid grid-cols-3 gap-8 max-w-7xl mx-auto mt-10">
+      <div class="relative w-40 h-auto mx-auto rounded-xl shadow-top bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-24 h-24 object-contain mb-4" />
+        <div class="text-center">
+          <h4 class="text-lg font-bold text-gray-900">HTML5</h4>
+          <p class="text-gray-600 text-sm mt-1">Struktur & semantik</p>
         </div>
       </div>
 
-      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
-        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
-          <p class="text-white text-sm font-medium">CSS3 – Styling & layout</p>
+      <div class="relative w-40 h-auto mx-auto rounded-xl shadow-top bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-24 h-24 object-contain mb-4" />
+        <div class="text-center">
+          <h4 class="text-lg font-bold text-gray-900">CSS3</h4>
+          <p class="text-gray-600 text-sm mt-1">Styling & layout</p>
         </div>
       </div>
 
-      <div class="relative group w-40 h-40 mx-auto overflow-hidden rounded-xl shadow-lg bg-white flex items-center justify-center">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
-        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl text-center px-4">
-          <p class="text-white text-sm font-medium">Docker – Container platform</p>
+      <div class="relative w-40 h-auto mx-auto rounded-xl shadow-top bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="w-24 h-24 object-contain mb-4" />
+        <div class="text-center">
+          <h4 class="text-lg font-bold text-gray-900">Docker</h4>
+          <p class="text-gray-600 text-sm mt-1">Container platform</p>
         </div>
       </div>
     </div>
+</section>
 
-<!-- Business Intelligence & Automatisering -->
-<h3 class="text-2xl font-semibold text-gray-800 text-center mt-16 mb-8">Microsoft Power Platform - Business Intelligence & Automatisering</h3>
-<div class="grid grid-cols-2 gap-8 max-w-7xl mx-auto">
+<!-- Under læring -->
+<section class="py-10 bg-white px-4 border-t border-gray-200">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Under læring</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+      
+      <div class="relative w-40 h-auto mx-auto rounded-xl shadow-top bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-24 h-24 object-contain mb-4" />
+        <div class="text-center">
+          <h4 class="text-lg font-bold text-gray-900">React</h4>
+          <p class="text-gray-600 text-sm mt-1">Frontend framework</p>
+        </div>
+      </div>
 
-  <div class="relative w-40 h-auto mx-auto rounded-xl shadow-xl bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
-    <img src="Power_BI_Logo.png" alt="Power BI" class="w-24 h-24 object-contain mb-4" />
-    <div class="text-center">
-      <h4 class="text-lg font-bold text-gray-900">Power BI</h4>
-      <p class="text-gray-600 text-sm mt-1">Datavisualisering</p>
+      <div class="relative w-40 h-auto mx-auto rounded-xl shadow-top bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-24 h-24 object-contain mb-4" />
+        <div class="text-center">
+          <h4 class="text-lg font-bold text-gray-900">JavaScript</h4>
+          <p class="text-gray-600 text-sm mt-1">Dynamik & logik</p>
+        </div>
+      </div>
+
     </div>
   </div>
+</section>
 
-  <div class="relative w-40 h-auto mx-auto rounded-xl shadow-xl bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
-    <img src="Microsoft_Power_Automate.svg.png" alt="Power Automate" class="w-24 h-24 object-contain mb-4" />
-    <div class="text-center">
-      <h4 class="text-lg font-bold text-gray-900">Power Automate</h4>
-      <p class="text-gray-600 text-sm mt-1">Automatisering</p>
+
+  <!-- Microsoft Power Platform -->
+    <h3 class="text-2xl font-semibold text-gray-800 text-center mt-16 mb-8">Microsoft Power Platform - Business Intelligence & Automatisering</h3>
+    <div class="grid grid-cols-2 gap-8 max-w-7xl mx-auto">
+
+      <div class="relative w-40 h-auto mx-auto rounded-xl shadow-top bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
+        <img src="Power_BI_Logo.png" alt="Power BI" class="w-24 h-24 object-contain mb-4" />
+        <div class="text-center">
+          <h4 class="text-lg font-bold text-gray-900">Power BI</h4>
+          <p class="text-gray-600 text-sm mt-1">Datavisualisering</p>
+        </div>
+      </div>
+
+      <div class="relative w-40 h-auto mx-auto rounded-xl shadow-top bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
+        <img src="Microsoft_Power_Automate.svg.png" alt="Power Automate" class="w-24 h-24 object-contain mb-4" />
+        <div class="text-center">
+          <h4 class="text-lg font-bold text-gray-900">Power Automate</h4>
+          <p class="text-gray-600 text-sm mt-1">Automatisering</p>
+        </div>
+      </div>
+
     </div>
   </div>
-
-</div>
 </section>
 
 <section id="projekter" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
