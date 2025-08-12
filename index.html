@@ -13,105 +13,128 @@
     </style>
   </head>
 
-  <!-- SIDEMENU -->
-  <aside class="hidden md:flex flex-col w-64 bg-white shadow-lg fixed h-full">
-    <div class="p-6 border-b">
-      <h1 class="text-2xl font-bold">Rafed Ali Beier</h1>
-    </div>
-    <nav class="flex-1 overflow-y-auto">
-      <ul>
-        <li>
-          <a href="#forside" class="block py-3 px-6 hover:bg-gray-200 transition active-link">Forside</a>
-        </li>
-        <li>
-          <a href="#about" class="block py-3 px-6 hover:bg-gray-200 transition">Om mig</a>
-        </li>
-        <li>
-          <a href="#projekter" class="flex items-center justify-between py-3 px-6 hover:bg-gray-200 transition group">
-            Projekter
-            <span class="transform group-hover:rotate-90 transition">▶</span>
-          </a>
-          <ul class="ml-6">
-            <li>
-              <a href="#microsoft-power-platform" class="block py-2 px-4 text-sm hover:bg-gray-100 transition">
-                Microsoft Power Platform
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#kontakt" class="block py-3 px-6 hover:bg-gray-200 transition">Kontakt</a>
-        </li>
-      </ul>
-    </nav>
-  </aside>
-
-  <!-- MOBILMENU -->
-  <div class="md:hidden fixed top-0 left-0 w-full bg-white shadow p-4 flex justify-between items-center z-50">
-    <h1 class="text-lg font-bold">Rafed Ali Beier</h1>
-    <button id="menuBtn" class="p-2 bg-gray-200 rounded">☰</button>
+ <!-- MOBIL HEADER -->
+<header class="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 md:hidden">
+  <div class="flex justify-between px-4 py-4">
+    <h1 class="text-xl font-bold text-blue-700">Rafed Ali Beier</h1>
+    <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
   </div>
-  <div id="mobileMenu" class="fixed top-0 left-[-100%] w-64 h-full bg-white shadow-lg z-50 p-6 transition-all duration-300">
-    <button id="closeMenu" class="mb-6">✕</button>
-    <nav>
-      <ul>
-        <li><a href="#forside" class="block py-3">Forside</a></li>
-        <li><a href="#about" class="block py-3">Om mig</a></li>
-        <li>
-          <a href="#projekter" class="block py-3">Projekter</a>
-          <ul class="ml-4">
-            <li><a href="#microsoft-power-platform" class="block py-2 text-sm">Microsoft Power Platform</a></li>
-          </ul>
-        </li>
-        <li><a href="#kontakt" class="block py-3">Kontakt</a></li>
-      </ul>
-    </nav>
-  </div>
+  <nav id="mobile-menu" class="hidden px-4 pb-4">
+    <ul class="space-y-3 text-lg">
+      <li><a href="#forside" class="block text-gray-700 hover:text-blue-600">Forside</a></li>
+      <li><a href="#om" class="block text-gray-700 hover:text-blue-600">Om mig</a></li>
+      <li><a href="#erfaring" class="block text-gray-700 hover:text-blue-600">Erfaring</a></li>
+      <li><a href="#uddannelse" class="block text-gray-700 hover:text-blue-600">Uddannelse</a></li>
+      <li>
+        <button id="toggle-techstack-submenu" class="w-full flex justify-between items-center text-gray-700 hover:text-blue-600 focus:outline-none" aria-expanded="false">
+          Tech stack
+          <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul id="techstack-submenu" class="hidden ml-4 mt-2 space-y-2">
+          <li><a href="#powerplatform" class="text-gray-600 hover:text-blue-500">Power Platform</a></li>
+        </ul>
+      </li>
+      <li><a href="#projekter" class="block text-gray-700 hover:text-blue-600">Projekter</a></li>
+      <li><a href="#kontakt" class="block text-gray-700 hover:text-blue-600">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- SIDE INDHOLD -->
-  <main class="flex-1 ml-0 md:ml-64 p-6">
-    <section id="forside" class="h-screen bg-gray-200 p-6 rounded mb-6">Forside indhold</section>
-    <section id="about" class="h-screen bg-gray-300 p-6 rounded mb-6">Om mig</section>
-    <section id="projekter" class="h-screen bg-gray-200 p-6 rounded mb-6">Projekter</section>
-    <section id="microsoft-power-platform" class="h-screen bg-gray-300 p-6 rounded mb-6">
-      Microsoft Power Platform - Business Intelligence & Automatisering
-    </section>
-    <section id="kontakt" class="h-screen bg-gray-200 p-6 rounded">Kontakt</section>
-  </main>
+<!-- SIDEBAR (Desktop) -->
+<div class="flex pt-20 md:pt-0">
+  <nav aria-label="Primær navigation" class="hidden md:block w-64 bg-white shadow-lg fixed top-0 left-0 h-full p-6 space-y-6 z-50">
+    <h1 class="text-2xl font-bold text-gray-800">Rafed Ali Beier</h1>
+    <ul class="space-y-3 text-lg">
+      <li><a href="#forside" class="nav-link font-bold">Forside</a></li>
+      <li><a href="#om" class="nav-link">Om mig</a></li>
+      <li><a href="#erfaring" class="nav-link">Erfaring</a></li>
+      <li><a href="#uddannelse" class="nav-link">Uddannelse</a></li>
+      <li>
+        <a href="#techstack" class="nav-link">Tech stack</a>
+        <ul class="ml-4 mt-2 space-y-2">
+          <li><a href="#powerplatform" class="text-gray-600 hover:text-blue-500">Power Platform</a></li>
+        </ul>
+      </li>
+      <li><a href="#projekter" class="nav-link">Projekter</a></li>
+      <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
+</div>
 
-  <script>
-    // Mobilmenu toggle
-    document.getElementById('menuBtn').addEventListener('click', () => {
-      document.getElementById('mobileMenu').style.left = '0';
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const submenuToggle = document.getElementById('toggle-techstack-submenu');
+  const submenu = document.getElementById('techstack-submenu');
+
+  // Toggle mobilmenu
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Toggle mobil submenu
+  submenuToggle?.addEventListener('click', () => {
+    const expanded = submenuToggle.getAttribute('aria-expanded') === 'true';
+    submenuToggle.setAttribute('aria-expanded', String(!expanded));
+    submenu.classList.toggle('hidden');
+    submenuToggle.querySelector('svg').classList.toggle('rotate-180');
+  });
+
+  // Active link ved scroll (både mobil og desktop)
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
     });
-    document.getElementById('closeMenu').addEventListener('click', () => {
-      document.getElementById('mobileMenu').style.left = '-100%';
+
+    navLinks.forEach(link => {
+      link.classList.remove('font-bold');
+      link.removeAttribute('aria-current');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('font-bold');
+        link.setAttribute('aria-current', 'page');
+      }
     });
+  });
+</script>
 
-    // Highlight aktiv sektion ved scroll
-    const sections = document.querySelectorAll("main section");
-    const navLinks = document.querySelectorAll("aside nav a");
+<style>
+  .nav-link {
+    position: relative;
+    display: inline-block;
+    color: #4B5563;
+    transition: color 0.3s;
+  }
+  .nav-link:hover {
+    color: #2563EB;
+  }
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #2563EB;
+    transition: width 0.3s;
+  }
+  .nav-link:hover::before {
+    width: 100%;
+  }
+</style>
 
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove("bg-gray-200", "font-bold");
-        if (link.getAttribute("href") === `#${current}`) {
-          link.classList.add("bg-gray-200", "font-bold");
-        }
-      });
-    });
-  </script>
-
-</body>
-</html>
 
       <!-- HOVEDINDHOLD -->
       <main class="w-full md:ml-64">
