@@ -58,124 +58,108 @@
 </head>
 <body>
   <!-- MOBIL HEADER -->
-  <header class="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 md:hidden h-16 flex items-center px-4">
+<header class="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 md:hidden">
+  <div class="flex justify-between px-4 py-4">
     <h1 class="text-xl font-bold text-blue-700">Rafed Ali Beier</h1>
-    <button id="menu-toggle" class="ml-auto text-gray-600 focus:outline-none">
+    <button id="menu-toggle" class="text-gray-600 focus:outline-none">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
-  </header>
-
-  <!-- MOBIL MENU (overlay) -->
-  <nav id="mobile-menu" class="hidden fixed top-16 left-0 w-full bg-white px-4 pb-4 shadow-md z-40">
+  </div>
+  <nav id="mobile-menu" class="hidden px-4 pb-4">
     <ul class="space-y-3 text-lg">
-      <li><a href="#forside" class="block text-gray-700 hover:text-blue-600 mobile-link">Forside</a></li>
-      <li><a href="#om" class="block text-gray-700 hover:text-blue-600 mobile-link">Om mig</a></li>
-      <li><a href="#erfaring" class="block text-gray-700 hover:text-blue-600 mobile-link">Erfaring</a></li>
-      <li><a href="#uddannelse" class="block text-gray-700 hover:text-blue-600 mobile-link">Uddannelse</a></li>
-      <!-- Tech stack med submenu -->
-      <li>
-        <button id="toggle-techstack-submenu" aria-expanded="false" aria-controls="techstack-submenu" class="flex justify-between w-full text-gray-700 hover:text-blue-600 focus:outline-none">
-          Tech stack
-          <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <ul id="techstack-submenu" class="hidden pl-4 mt-2 space-y-2">
-          <li><a href="#techstack" class="block text-gray-600 hover:text-blue-600 mobile-link">Tech stack detaljer</a></li>
-          <li><a href="#powerplatform" class="block text-gray-600 hover:text-blue-600 mobile-link">Power Platform</a></li>
-        </ul>
-      </li>
-      <li><a href="#projekter" class="block text-gray-700 hover:text-blue-600 mobile-link">Projekter</a></li>
-      <li><a href="#kontakt" class="block text-gray-700 hover:text-blue-600 mobile-link">Kontakt</a></li>
+      <li><a href="#forside" class="block text-gray-700 hover:text-blue-600">Forside</a></li>
+      <li><a href="#om" class="block text-gray-700 hover:text-blue-600">Om mig</a></li>
+      <li><a href="#erfaring" class="block text-gray-700 hover:text-blue-600">Erfaring</a></li>
+      <li><a href="#uddannelse" class="block text-gray-700 hover:text-blue-600">Uddannelse</a></li>
+      <li><a href="#techstack" class="block text-gray-700 hover:text-blue-600">Tech stack</a></li>
+      <li><a href="#powerplatform" class="block text-gray-700 hover:text-blue-600">Power Platform</a></li>
+      <li><a href="#projekter" class="block text-gray-700 hover:text-blue-600">Projekter</a></li>
+      <li><a href="#kontakt" class="block text-gray-700 hover:text-blue-600">Kontakt</a></li>
     </ul>
   </nav>
+</header>
 
-  <!-- SIDEBAR (Desktop) -->
-  <div class="flex pt-20 md:pt-0">
-    <nav aria-label="Primær navigation" class="hidden md:block w-64 bg-white shadow-lg fixed top-0 left-0 h-full p-6 space-y-6 z-50">
-      <h1 class="text-2xl font-bold text-gray-800">Rafed Ali Beier</h1>
-      <ul class="space-y-3 text-lg">
-        <li><a href="#forside" class="nav-link font-bold">Forside</a></li>
-        <li><a href="#om" class="nav-link">Om mig</a></li>
-        <li><a href="#erfaring" class="nav-link">Erfaring</a></li>
-        <li><a href="#uddannelse" class="nav-link">Uddannelse</a></li>
-        <li><a href="#techstack" class="nav-link">Tech stack</a></li>
-        <li><a href="#powerplatform" class="nav-link">Power Platform</a></li>
-        <li><a href="#projekter" class="nav-link">Projekter</a></li>
-        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
-      </ul>
-    </nav>
-  </div>
+<!-- SIDEBAR (Desktop) -->
+<div class="flex pt-20 md:pt-0">
+  <nav aria-label="Primær navigation" class="hidden md:block w-64 bg-white shadow-lg fixed top-0 left-0 h-full p-6 space-y-6 z-50">
+    <h1 class="text-2xl font-bold text-gray-800">Rafed Ali Beier</h1>
+    <ul class="space-y-3 text-lg">
+      <li><a href="#forside" class="nav-link font-bold">Forside</a></li>
+      <li><a href="#om" class="nav-link">Om mig</a></li>
+      <li><a href="#erfaring" class="nav-link">Erfaring</a></li>
+      <li><a href="#uddannelse" class="nav-link">Uddannelse</a></li>
+      <li><a href="#techstack" class="nav-link">Tech stack</a></li>
+      <li><a href="#powerplatform" class="nav-link">Power Platform</a></li>
+      <li><a href="#projekter" class="nav-link">Projekter</a></li>
+      <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
+</div>
 
-  <!-- Dummy sections til scroll -->
-  <main class="md:ml-64">
-    <section id="forside" style="height: 100vh; padding: 2rem;">Forside indhold</section>
-    <section id="om" style="height: 100vh; padding: 2rem;">Om mig indhold</section>
-    <section id="erfaring" style="height: 100vh; padding: 2rem;">Erfaring indhold</section>
-    <section id="uddannelse" style="height: 100vh; padding: 2rem;">Uddannelse indhold</section>
-    <section id="techstack" style="height: 100vh; padding: 2rem;">Tech stack indhold</section>
-    <section id="powerplatform" style="height: 100vh; padding: 2rem;">Power Platform indhold</section>
-    <section id="projekter" style="height: 100vh; padding: 2rem;">Projekter indhold</section>
-    <section id="kontakt" style="height: 100vh; padding: 2rem;">Kontakt indhold</section>
-  </main>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 3000, once: true });
+  // Toggle mobilmenu
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
 
-    // Toggle mobilmenu
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+  // Active link ved scroll (både mobil og desktop)
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
 
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
     });
 
-    // Luk mobilmenu når man klikker på link
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
+    navLinks.forEach(link => {
+      link.classList.remove('font-bold');
+      link.removeAttribute('aria-current');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('font-bold');
+        link.setAttribute('aria-current', 'page');
+      }
     });
+  });
+</script>
 
-    // Toggle mobil submenu
-    const submenuToggle = document.getElementById('toggle-techstack-submenu');
-    const submenu = document.getElementById('techstack-submenu');
+<style>
+html, body {
+  overflow-x: hidden;
+}
 
-    submenuToggle.addEventListener('click', () => {
-      const expanded = submenuToggle.getAttribute('aria-expanded') === 'true';
-      submenuToggle.setAttribute('aria-expanded', String(!expanded));
-      submenu.classList.toggle('hidden');
-      submenuToggle.querySelector('svg').classList.toggle('rotate-180');
-    });
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: #4B5563;
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: #2563EB;
+}
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #2563EB;
+  transition: width 0.3s;
+}
+.nav-link:hover::before {
+  width: 100%;
+}
+</style>
 
-    // Active link ved scroll (både mobil og desktop)
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('font-bold');
-        link.removeAttribute('aria-current');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('font-bold');
-          link.setAttribute('aria-current', 'page');
-        }
-      });
-    });
-  </script>
-</body>
-</html>
 
 
       <!-- HOVEDINDHOLD -->
