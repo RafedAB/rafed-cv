@@ -359,21 +359,20 @@
   }
 
   .project-card {
-    background: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
-    padding: 1.5rem;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.4s ease, transform 0.4s ease;
     opacity: 1;
     transform: translateY(0);
-    display: block;
-    pointer-events: auto;
   }
   .project-card.hidden {
     opacity: 0;
     transform: translateY(20px);
     pointer-events: none;
-    display: none;
+    position: absolute; /* fjern plads, men vi skal animere container */
+  }
+
+  #projects-container {
+    position: relative; /* nødvendig for absolut positionering */
+    transition: height 0.4s ease;
   }
 </style>
 
@@ -451,29 +450,46 @@
     buttons.forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
 
-    const projects = document.querySelectorAll('.project-card');
+    const container = document.getElementById('projects-container');
+    const projects = Array.from(document.querySelectorAll('.project-card'));
 
+    // Gem den gamle højde
+    const oldHeight = container.offsetHeight;
+
+    // Vis/skjul projekter ved at tilføje/fjerne 'hidden' klasse
     projects.forEach(proj => {
       if (category === 'all' || proj.classList.contains(category)) {
         proj.classList.remove('hidden');
-        proj.style.display = "block";
-        setTimeout(() => {
-          proj.style.opacity = "1";
-          proj.style.transform = "translateY(0)";
-          proj.style.pointerEvents = "auto";
-        }, 10);
       } else {
-        proj.style.opacity = "0";
-        proj.style.transform = "translateY(20px)";
-        proj.style.pointerEvents = "none";
-        setTimeout(() => {
-          proj.classList.add('hidden');
-          proj.style.display = "none";
-        }, 300);
+        proj.classList.add('hidden');
       }
     });
+
+    // Vent til DOM opdaterer sig
+    requestAnimationFrame(() => {
+      // Beregn ny højde på container uden 'hidden' kort (da hidden er position:absolute)
+      let visibleProjects = projects.filter(p => !p.classList.contains('hidden'));
+      let totalHeight = 0;
+      visibleProjects.forEach(p => totalHeight += p.offsetHeight + parseInt(getComputedStyle(p).marginBottom));
+
+      // Hvis der ikke er nogen projekter, sæt en minimum højde for ikke at få hop
+      if (visibleProjects.length === 0) totalHeight = 200;
+
+      // Animer containerens højde fra gammel til ny
+      container.style.height = oldHeight + 'px'; // start på gammel højde
+      requestAnimationFrame(() => {
+        container.style.height = totalHeight + 'px'; // skift til ny højde med transition
+      });
+
+      // Når transition er færdig, sæt height til auto (så det tilpasser sig responsivt)
+      container.addEventListener('transitionend', function handler() {
+        container.style.height = 'auto';
+        container.removeEventListener('transitionend', handler);
+      });
+    });
   }
-  // Initial vis alle projekter med animation
+
+  // Initial filtrering - vis alle projekter
   document.querySelector('.btn-filter.active').click();
 </script>
 
