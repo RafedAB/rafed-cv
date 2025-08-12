@@ -371,7 +371,7 @@
 
 <!-- Microsoft Power Platform -->
 <div class="mt-6">
-  <h3 id="powerplatform" class="text-2xl font-semibold text-gray-800 text-center mt-16 mb-8">
+  <h3 section id="powerplatform" class="text-2xl font-semibold text-gray-800 text-center mt-16 mb-8">
     Microsoft Power Platform - Business Intelligence & Automatisering
   </h3>
   <div class="grid grid-cols-2 gap-8 max-w-7xl mx-auto pb-12">
@@ -632,22 +632,30 @@
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('section[id]');
   const scrollY = window.pageYOffset;
+  const offset = 150;
+  let activeSectionId = null;
 
   sections.forEach(section => {
     const rect = section.getBoundingClientRect();
-    const sectionId = section.getAttribute('id');
-    const offset = 150; // margin for aktivering lidt før sektionen rammes
 
-    // Tjek om sektionen er "in view" med lidt margin
     if (rect.top <= offset && rect.bottom > offset) {
-      document.querySelectorAll('nav a').forEach(link => {
-        link.classList.remove('font-bold');
-        if (link.getAttribute('href') === '#' + sectionId) {
-          link.classList.add('font-bold');
-        }
-      });
+      activeSectionId = section.getAttribute('id');
     }
   });
+
+  // Fallback: hvis bunden af siden er nået, aktivér sidste sektion
+  if ((window.innerHeight + scrollY) >= document.body.offsetHeight) {
+    activeSectionId = sections[sections.length - 1].getAttribute('id');
+  }
+
+  if (activeSectionId) {
+    document.querySelectorAll('nav a').forEach(link => {
+      link.classList.remove('font-bold');
+      if (link.getAttribute('href') === '#' + activeSectionId) {
+        link.classList.add('font-bold');
+      }
+    });
+  }
 });
 </script>
 
