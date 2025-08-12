@@ -439,35 +439,15 @@ html, body {
   <div class="max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Projekter</h2>
 
-    <!-- Filter knapper -->
-    <div class="flex justify-center mb-12 space-x-6">
-      <button onclick="filterProjects('all', event)" class="btn-filter active flex items-center space-x-2">
-        <span>Alle</span>
-        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
-          <path d="M16 18L22 12L16 6"/>
-        </svg>
-      </button>
-
-      <button onclick="filterProjects('tech', event)" class="btn-filter flex items-center space-x-2">
-        <span>Tech Projekter</span>
-        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
-          <path d="M16 18L22 12L16 6"/>
-        </svg>
-      </button>
-
-      <button onclick="filterProjects('bi', event)" class="btn-filter flex items-center space-x-2">
-        <span>Business Intelligence Projekter</span>
-        <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
-          <path d="M3 12h18M12 3v18"/>
-        </svg>
-      </button>
-    </div>
-
     <!-- Projekter container -->
     <div id="projects-container" class="grid md:grid-cols-2 gap-8">
 
       <!-- Tech Projekt 1 -->
-      <div class="project-card tech bg-white rounded-lg shadow p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
+      <div class="project-card tech bg-white rounded-lg shadow p-6 relative transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
+        <!-- Badge -->
+        <div class="absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-semibold text-white bg-blue-600 select-none pointer-events-none">
+          Tech
+        </div>
         <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
           <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 18L22 12L16 6"/>
@@ -486,7 +466,10 @@ html, body {
       </div>
 
       <!-- Tech Projekt 2 -->
-      <div class="project-card tech bg-white rounded-lg shadow p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
+      <div class="project-card tech bg-white rounded-lg shadow p-6 relative transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
+        <div class="absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-semibold text-white bg-blue-600 select-none pointer-events-none">
+          Tech
+        </div>
         <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
           <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 18L22 12L16 6"/>
@@ -509,7 +492,10 @@ html, body {
       </div>
 
       <!-- BI Projekt -->
-      <div class="project-card bi bg-white rounded-lg shadow p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
+      <div class="project-card bi bg-white rounded-lg shadow p-6 relative transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
+        <div class="absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-semibold text-white bg-yellow-500 select-none pointer-events-none">
+          BI
+        </div>
         <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
           <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 12h18M12 3v18"/>
@@ -529,33 +515,45 @@ html, body {
         </div>
       </div>
 
-      <!-- Ingen projekter besked -->
-      <div id="no-projects-msg" class="hidden text-center text-gray-500 mt-4 col-span-full">
-        Ingen projekter fundet.
-      </div>
     </div>
   </div>
 </section>
 
+<style>
+  /* Forhindrer tekstmarkering på badges og klik */
+  .select-none {
+    user-select: none;
+  }
+  .pointer-events-none {
+    pointer-events: none;
+  }
+</style>
+
+
 <script>
   function filterProjects(category, event) {
-    // Fjern 'active' fra alle filterknapper
-    const buttons = document.querySelectorAll('.btn-filter');
-    buttons.forEach(btn => btn.classList.remove('active'));
+    if(event) {
+      const buttons = document.querySelectorAll('.btn-filter');
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+        btn.tabIndex = -1;
+      });
+      event.target.classList.add('active');
+      event.target.setAttribute('aria-selected', 'true');
+      event.target.tabIndex = 0;
+      event.target.focus();
+    }
 
-    // Tilføj 'active' til den klikkede knap
-    event.currentTarget.classList.add('active');
-
-    // Find container og projekter
     const container = document.getElementById('projects-container');
     const projects = Array.from(document.querySelectorAll('.project-card'));
     const noProjectsMsg = document.getElementById('no-projects-msg');
 
     const oldHeight = container.offsetHeight;
 
-    // Vis/skjul projekter baseret på kategori
+    // Vis/skjul projekter
     projects.forEach(proj => {
-      if (category === 'all' || proj.classList.contains(category)) {
+      if(category === 'all' || proj.classList.contains(category)) {
         proj.classList.remove('hidden');
       } else {
         proj.classList.add('hidden');
@@ -566,13 +564,11 @@ html, body {
       // Beregn ny højde for container
       let visibleProjects = projects.filter(p => !p.classList.contains('hidden'));
       let totalHeight = 0;
-      visibleProjects.forEach(p => {
-        totalHeight += p.offsetHeight + parseInt(getComputedStyle(p).marginBottom);
-      });
+      visibleProjects.forEach(p => totalHeight += p.offsetHeight + parseInt(getComputedStyle(p).marginBottom));
 
-      if (visibleProjects.length === 0) {
+      if(visibleProjects.length === 0) {
         noProjectsMsg.style.display = 'block';
-        totalHeight = noProjectsMsg.offsetHeight + 48; // margin top
+        totalHeight = noProjectsMsg.offsetHeight + 48; // lidt margin-top
       } else {
         noProjectsMsg.style.display = 'none';
       }
@@ -590,22 +586,17 @@ html, body {
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Initial visning: vis alle projekter
     const activeBtn = document.querySelector('.btn-filter.active');
-    if (activeBtn) filterProjects('all', { currentTarget: activeBtn });
+    if(activeBtn) filterProjects('all', {target: activeBtn});
   });
 </script>
+
 
 <style>
   html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-  }
-
-  /* Skjuler elementer med .hidden */
-  .hidden {
-    display: none !important;
   }
 </style>
 
@@ -671,9 +662,6 @@ window.addEventListener('scroll', () => {
   }
 });
 </script>
-
-
-	  
 
   </body>
 </html>
