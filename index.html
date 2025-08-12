@@ -349,8 +349,10 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  .btn-filter:hover {
+  .btn-filter:hover,
+  .btn-filter:focus-visible {
     background-color: #f3f4f6;
+    outline: none;
   }
   .btn-filter.active {
     background-color: #2563eb;
@@ -367,14 +369,27 @@
     opacity: 0;
     transform: translateY(20px);
     pointer-events: none;
-    position: absolute; /* fjern plads, men vi skal animere container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 
   #projects-container {
-    position: relative; /* nødvendig for absolut positionering */
+    overflow: hidden;
     transition: height 0.4s ease;
+    height: auto;
+    position: relative; /* vigtig for absolute .hidden kort */
   }
-</style>
+
+  #no-projects-msg {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 3rem;
+    display: none;
+  }
+</style>	  
 
 <section id="projekter" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
   <div class="max-w-5xl mx-auto">
@@ -446,42 +461,52 @@
 
 <script>
   function filterProjects(category, event) {
-    const buttons = document.querySelectorAll('.btn-filter');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    if(event) {
+      const buttons = document.querySelectorAll('.btn-filter');
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+        btn.tabIndex = -1;
+      });
+      event.target.classList.add('active');
+      event.target.setAttribute('aria-selected', 'true');
+      event.target.tabIndex = 0;
+      event.target.focus();
+    }
 
     const container = document.getElementById('projects-container');
     const projects = Array.from(document.querySelectorAll('.project-card'));
+    const noProjectsMsg = document.getElementById('no-projects-msg');
 
-    // Gem den gamle højde
     const oldHeight = container.offsetHeight;
 
-    // Vis/skjul projekter ved at tilføje/fjerne 'hidden' klasse
+    // Vis/skjul projekter
     projects.forEach(proj => {
-      if (category === 'all' || proj.classList.contains(category)) {
+      if(category === 'all' || proj.classList.contains(category)) {
         proj.classList.remove('hidden');
       } else {
         proj.classList.add('hidden');
       }
     });
 
-    // Vent til DOM opdaterer sig
     requestAnimationFrame(() => {
-      // Beregn ny højde på container uden 'hidden' kort (da hidden er position:absolute)
+      // Beregn ny højde for container
       let visibleProjects = projects.filter(p => !p.classList.contains('hidden'));
       let totalHeight = 0;
       visibleProjects.forEach(p => totalHeight += p.offsetHeight + parseInt(getComputedStyle(p).marginBottom));
 
-      // Hvis der ikke er nogen projekter, sæt en minimum højde for ikke at få hop
-      if (visibleProjects.length === 0) totalHeight = 200;
+      if(visibleProjects.length === 0) {
+        noProjectsMsg.style.display = 'block';
+        totalHeight = noProjectsMsg.offsetHeight + 48; // lidt margin-top
+      } else {
+        noProjectsMsg.style.display = 'none';
+      }
 
-      // Animer containerens højde fra gammel til ny
-      container.style.height = oldHeight + 'px'; // start på gammel højde
+      container.style.height = oldHeight + 'px';
       requestAnimationFrame(() => {
-        container.style.height = totalHeight + 'px'; // skift til ny højde med transition
+        container.style.height = totalHeight + 'px';
       });
 
-      // Når transition er færdig, sæt height til auto (så det tilpasser sig responsivt)
       container.addEventListener('transitionend', function handler() {
         container.style.height = 'auto';
         container.removeEventListener('transitionend', handler);
@@ -489,8 +514,10 @@
     });
   }
 
-  // Initial filtrering - vis alle projekter
-  document.querySelector('.btn-filter.active').click();
+  document.addEventListener('DOMContentLoaded', () => {
+    const activeBtn = document.querySelector('.btn-filter.active');
+    if(activeBtn) filterProjects('all', {target: activeBtn});
+  });
 </script>
 
 
