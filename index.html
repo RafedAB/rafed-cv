@@ -353,9 +353,9 @@
 
     <!-- Projekter container -->
     <div id="projects-container" class="grid md:grid-cols-2 gap-8">
-      
-      <!-- Tech Projekt -->
-      <div class="project-card tech bg-white rounded-lg shadow p-6 hover:shadow-2xl hover:-translate-y-1 transform transition duration-300">
+
+      <!-- Tech Projekt 1 -->
+      <div class="project-card tech bg-white rounded-lg shadow p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
         <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
           <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18L22 12L16 6"/></svg>
           Alfa Laval Kolding – Ferieplanlægningssystem
@@ -364,8 +364,6 @@
           Som en del af mit studie udviklede mit projektteam og jeg et digitalt ferieplanlægningssystem til lageret hos Alfa Laval i Kolding.
           Systemet skulle reducere tidsforbruget på ferieplanlægning og sikre en retfærdig fordeling af ferie. Projektet omfattede udvikling af en brugervenlig grænseflade, design af en algoritme til ferieallokering samt implementering af en database, der tager højde for bemandings- og kompetencekrav i virksomheden.
         </p>
-
-        <!-- Teknologier -->
         <div class="flex space-x-3">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="w-6 h-6" />
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET Core" class="w-6 h-6" />
@@ -373,8 +371,25 @@
         </div>
       </div>
 
+      <!-- Tech Projekt 2 -->
+      <div class="project-card tech bg-white rounded-lg shadow p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
+        <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
+          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18L22 12L16 6"/></svg>
+          Webapplikation til rejsebureauet GoTurz
+        </h4>
+        <p class="text-gray-700 text-justify leading-relaxed mb-4">
+          Udviklede en fuldt funktionel prototype af en rejseplatform i ASP.NET Core og Blazor med integration til fly- og hotel-API’er. Applikationen præsenterer komplette rejsepakker med samlet pris, tilbyder brugeroprettelse, login, rollebaseret adgang, bookingsystem og realtidschat.
+          Backend er baseret på SQL Server og Entity Framework, hostet i Microsoft Azure. Her har der også været fokus på UI/UX, sikkerhed og skalerbarhed.
+        </p>
+        <div class="flex space-x-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET Core" class="w-6 h-6" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blazor/blazor-original.svg" alt="Blazor" class="w-6 h-6" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlserver/sqlserver-original.svg" alt="SQL Server" class="w-6 h-6" />
+        </div>
+      </div>
+
       <!-- BI Projekt -->
-      <div class="project-card bi bg-white rounded-lg shadow p-6 hover:shadow-2xl hover:-translate-y-1 transform transition duration-300">
+      <div class="project-card bi bg-white rounded-lg shadow p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
         <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
           <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18"/></svg>
           Alfa Laval Kolding – Power BI & Power Automate
@@ -384,16 +399,11 @@
           Visualiseringen omfattede kundens ordrenummer, bestillingsdato, returnummer, alderskategori og status for varehusmodtagelse.
           For at automatisere processen designede jeg et Power Automate-flow, som sender notifikationer via email, så brugerne bliver mindet om at tage handling. Projektet optimerede opfølgning og sikrede effektiv håndtering af returordrer.
         </p>
-
-        <!-- Teknologier -->
         <div class="flex space-x-3">
           <img src="Power_BI_Logo.png" alt="Power BI" class="w-6 h-6" />
           <img src="Microsoft_Power_Automate.svg.png" alt="Power Automate" class="w-6 h-6" />
         </div>
       </div>
-
-      <!-- Flere projekter kan tilføjes på samme måde -->
-      
     </div>
   </div>
 </section>
@@ -408,28 +418,42 @@
   .btn-filter.active {
     @apply bg-blue-600 text-white border-blue-600;
   }
+  /* Animation af projektkort ved filtrering */
+  .project-card {
+    transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.5s ease, margin 0.5s ease, padding 0.5s ease;
+    overflow: hidden;
+    max-height: 1000px;
+    opacity: 1;
+    margin-bottom: 1.5rem;
+  }
+  .project-card.hidden {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    pointer-events: none;
+  }
 </style>
 
 <script>
   function filterProjects(category) {
     const buttons = document.querySelectorAll('.btn-filter');
     buttons.forEach(btn => btn.classList.remove('active'));
-
-    const activeButton = Array.from(buttons).find(btn => btn.textContent.toLowerCase().includes(category));
-    if (activeButton) activeButton.classList.add('active');
+    event.target.classList.add('active');
 
     const projects = document.querySelectorAll('.project-card');
     projects.forEach(proj => {
-      if(category === 'all') {
-        proj.style.display = 'block';
+      if (category === 'all' || proj.classList.contains(category)) {
+        proj.classList.remove('hidden');
       } else {
-        proj.style.display = proj.classList.contains(category) ? 'block' : 'none';
+        proj.classList.add('hidden');
       }
     });
   }
-  // Sæt default filter til alle
   filterProjects('all');
 </script>
+
 
 
 
