@@ -38,6 +38,95 @@
   </nav>
 </header>
 
+<!-- MOBIL HEADER -->
+<header class="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 md:hidden">
+  <div class="flex justify-between px-4 py-4">
+    <div class="flex flex-col justify-start">
+      <h1 class="text-xl font-bold text-blue-700">Rafed Ali Beier</h1>
+    </div>
+    <button id="menu-toggle" class="text-gray-600 focus:outline-none" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="hidden px-4 pb-4">
+    <ul class="space-y-3 text-lg">
+      <li><a href="#forside" class="block text-gray-700 hover:text-blue-600">Forside</a></li>
+      <li><a href="#om" class="block text-gray-700 hover:text-blue-600">Om mig</a></li>
+      <li><a href="#erfaring" class="block text-gray-700 hover:text-blue-600">Erfaringer</a></li>
+      <li><a href="#uddannelse" class="block text-gray-700 hover:text-blue-600">Uddannelse</a></li>
+
+      <li>
+        <button id="toggle-techstack-submenu" aria-expanded="false" class="w-full text-left text-gray-700 hover:text-blue-600 flex justify-between items-center">
+          Tech stack
+          <svg class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
+        <ul id="techstack-submenu" class="hidden ml-4 mt-2 space-y-2 text-gray-600">
+          <li><a href="#powerplatform" class="block hover:text-blue-500">Power Platform</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#projekter" class="block text-gray-700 hover:text-blue-600">Projekter</a></li>
+      <li><a href="#kontakt" class="block text-gray-700 hover:text-blue-600">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const submenuToggle = document.getElementById('toggle-techstack-submenu');
+  const submenu = document.getElementById('techstack-submenu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  submenuToggle.addEventListener('click', () => {
+    const expanded = submenuToggle.getAttribute('aria-expanded') === 'true';
+    submenuToggle.setAttribute('aria-expanded', String(!expanded));
+    submenu.classList.toggle('hidden');
+    submenuToggle.querySelector('svg').classList.toggle('rotate-180');
+  });
+
+  // Aktiv menu baseret på scroll
+  const sections = document.querySelectorAll('section[id]');
+  const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.classList.remove('font-bold');
+      link.removeAttribute('aria-current');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('font-bold');
+        link.setAttribute('aria-current', 'page');
+
+        // Hvis aktivt link er i submenu, fold den ud
+        if (submenu.contains(link)) {
+          submenu.classList.remove('hidden');
+          submenuToggle.setAttribute('aria-expanded', 'true');
+          submenuToggle.querySelector('svg').classList.add('rotate-180');
+        } else {
+          submenu.classList.add('hidden');
+          submenuToggle.setAttribute('aria-expanded', 'false');
+          submenuToggle.querySelector('svg').classList.remove('rotate-180');
+        }
+      }
+    });
+  });
+</script>
+
 
     <div class="flex pt-20 md:pt-0">
       <!-- SIDEBAR (Desktop) -->
@@ -88,6 +177,28 @@
           </li>
         </ul>
       </nav>
+
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100; // lidt offset
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('font-bold');
+    link.removeAttribute('aria-current');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('font-bold');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+});
 
 
       <!-- HOVEDINDHOLD -->
@@ -473,7 +584,8 @@
         </h4>
         <p class="text-gray-700 text-justify leading-relaxed mb-4">
           Udviklede en Power BI-visualisering af returordrer over 2 og 3 måneder for Alfa Laval, hvor ordrer ældre end 2 måneder krævede kundeopfølgning, og ordrer over 3 måneder automatisk blev slettet i ERP-systemet.
-          Visualiseringen omfattede kundens ordrenummer, bestillingsdato, returnummer, alderskategori og status for varehusmodtagelse.
+			<br>
+          Visualiseringen omfattede kundens ordrenummer, dato for anmodning, returnummer, status for varehusmodtagelse og relevante notater.
 <br><br>
           For at automatisere processen designede jeg et Power Automate-flow, som sender notifikationer via email, så brugerne bliver mindet om at tage handling. Projektet optimerede opfølgning og sikrede effektiv håndtering af returordrer.
         </p>
