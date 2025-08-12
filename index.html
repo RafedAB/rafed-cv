@@ -340,6 +340,43 @@
   </div>
 </section>
 
+		  <style>
+  .btn-filter {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .btn-filter:hover {
+    background-color: #f3f4f6;
+  }
+  .btn-filter.active {
+    background-color: #2563eb;
+    color: white;
+    border-color: #2563eb;
+  }
+
+  .project-card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .project-card.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    display: none;
+  }
+</style>
+
 <section id="projekter" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
   <div class="max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Projekter</h2>
@@ -417,47 +454,25 @@
     const projects = document.querySelectorAll('.project-card');
 
     projects.forEach(proj => {
-      const fullHeight = proj.scrollHeight + "px";
-
       if (category === 'all' || proj.classList.contains(category)) {
-        proj.style.display = "block";
-        proj.style.height = "0px";
-        proj.classList.remove('hidden');
-
+        proj.style.display = 'block';
         setTimeout(() => {
-          proj.style.height = fullHeight;
-          proj.style.opacity = "1";
-          proj.style.marginBottom = "1.5rem";
-          proj.style.paddingTop = "";
-          proj.style.paddingBottom = "";
-          proj.style.pointerEvents = "auto";
-        }, 10);
-
-        setTimeout(() => {
-          proj.style.height = "auto";
-        }, 410);
-
+          proj.style.opacity = '1';
+          proj.style.transform = 'translateY(0)';
+          proj.style.pointerEvents = 'auto';
+        }, 20);
       } else {
-        proj.style.height = fullHeight;
-
+        proj.style.opacity = '0';
+        proj.style.transform = 'translateY(20px)';
+        proj.style.pointerEvents = 'none';
         setTimeout(() => {
-          proj.style.height = "0px";
-          proj.style.opacity = "0";
-          proj.style.marginBottom = "0";
-          proj.style.paddingTop = "0";
-          proj.style.paddingBottom = "0";
-          proj.style.pointerEvents = "none";
-        }, 10);
-
-        setTimeout(() => {
-          proj.classList.add('hidden');
-          proj.style.display = "none";
-        }, 410);
+          proj.style.display = 'none';
+        }, 300);
       }
     });
   }
 
-  // Kør filter for 'all' ved indlæsning og simuler klik for korrekt event
+  // Start med alle projekter synlige
   document.querySelector('.btn-filter.active').click();
 </script>
 
