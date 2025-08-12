@@ -340,7 +340,7 @@
   </div>
 </section>
 
-		  <style>
+<style>
   .btn-filter {
     padding: 0.5rem 1rem;
     border-radius: 0.375rem;
@@ -361,14 +361,14 @@
   .project-card {
     background: white;
     border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
     padding: 1.5rem;
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 1;
     transform: translateY(0);
+    display: block;
     pointer-events: auto;
   }
-
   .project-card.hidden {
     opacity: 0;
     transform: translateY(20px);
@@ -455,28 +455,27 @@
 
     projects.forEach(proj => {
       if (category === 'all' || proj.classList.contains(category)) {
-        proj.style.display = 'block';
+        proj.classList.remove('hidden');
+        proj.style.display = "block";
         setTimeout(() => {
-          proj.style.opacity = '1';
-          proj.style.transform = 'translateY(0)';
-          proj.style.pointerEvents = 'auto';
-        }, 20);
+          proj.style.opacity = "1";
+          proj.style.transform = "translateY(0)";
+          proj.style.pointerEvents = "auto";
+        }, 10);
       } else {
-        proj.style.opacity = '0';
-        proj.style.transform = 'translateY(20px)';
-        proj.style.pointerEvents = 'none';
+        proj.style.opacity = "0";
+        proj.style.transform = "translateY(20px)";
+        proj.style.pointerEvents = "none";
         setTimeout(() => {
-          proj.style.display = 'none';
+          proj.classList.add('hidden');
+          proj.style.display = "none";
         }, 300);
       }
     });
   }
-
-  // Start med alle projekter synlige
+  // Initial vis alle projekter med animation
   document.querySelector('.btn-filter.active').click();
 </script>
-
-
 
 
 <section id="kontakt" class="bg-gradient-to-r from-blue-600 to-blue-800 py-20 px-6 border-t border-blue-900 text-white">
