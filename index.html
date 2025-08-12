@@ -588,8 +588,8 @@ html, body {
 </script>
 
 
-<section id="kontakt" class="bg-gradient-to-r from-blue-600 to-blue-800 py-20 px-6 border-t border-blue-900 text-white">
-  <div class="max-w-4xl mx-auto text-center">
+<section id="kontakt" class="w-full bg-gradient-to-r from-blue-600 to-blue-800 py-20 border-t border-blue-900 text-white">
+  <div class="max-w-screen-xl mx-auto px-6 text-center">
     <h2 class="text-4xl font-extrabold mb-8 tracking-tight">Kontakt</h2>
     <p class="mb-8 text-lg max-w-xl mx-auto">
       Du kan kontakte mig på e-mail: 
@@ -609,7 +609,7 @@ html, body {
 </section>
 
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({ duration: 500, once: false });
 
@@ -634,6 +634,11 @@ window.addEventListener('scroll', () => {
     }
   });
 
+  // Fallback: hvis bunden af siden er nået, aktivér sidste sektion
+  if ((window.innerHeight + scrollY) >= document.body.offsetHeight) {
+    activeSectionId = sections[sections.length - 1].getAttribute('id');
+  }
+
   if (activeSectionId) {
     document.querySelectorAll('nav a').forEach(link => {
       link.classList.remove('font-bold');
@@ -644,6 +649,8 @@ window.addEventListener('scroll', () => {
   }
 });
 </script>
+
+
 	  
 
   </body>
