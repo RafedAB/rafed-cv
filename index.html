@@ -98,6 +98,11 @@
 </script>
 
 <style>
+
+html, body {
+  overflow-x: hidden;
+}
+	
   .nav-link {
     position: relative;
     display: inline-block;
@@ -124,7 +129,7 @@
 
 
       <!-- HOVEDINDHOLD -->
-      <main class="w-full md:ml-64">
+      <main class="w-full md:ml-64 max-w-full overflow-x-hidden">
         <!-- FORSIDE -->
 <section id="forside" data-aos="fade-in" class="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-600 to-indigo-700 text-white px-6 relative overflow-hidden">
   <!-- Baggrundsmønster -->
@@ -644,6 +649,7 @@ window.addEventListener('scroll', () => {
   }
 });
 </script>
+	  
 
   </body>
 </html>
