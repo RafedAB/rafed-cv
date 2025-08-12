@@ -634,11 +634,6 @@ window.addEventListener('scroll', () => {
     }
   });
 
-  // Fallback: hvis bunden af siden er nået, aktivér sidste sektion
-  if ((window.innerHeight + scrollY) >= document.body.offsetHeight) {
-    activeSectionId = sections[sections.length - 1].getAttribute('id');
-  }
-
   if (activeSectionId) {
     document.querySelectorAll('nav a').forEach(link => {
       link.classList.remove('font-bold');
