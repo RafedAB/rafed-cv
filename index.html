@@ -84,16 +84,23 @@
       <!-- HOVEDINDHOLD -->
       <main class="w-full md:ml-64">
         <!-- FORSIDE -->
-        <section id="forside" data-aos="fade-in" class="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-600 to-indigo-700 text-white px-4">
-          <h2 class="text-5xl font-extrabold mb-4">Rafed Ali Beier</h2>
-          <p class="text-xl mb-6">Datamatikerstuderende • Fullstack interesseret • Bygger digitale løsninger</p>
-          </a>
-	<a href="#om" class="mt-52 animate-bounce text-white hover:text-blue-200 transition">
-  	<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-  	</svg>
-	</a>
-        </section>
+<section id="forside" data-aos="fade-in" class="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-600 to-indigo-700 text-white px-6 relative overflow-hidden">
+  <!-- Baggrundsmønster -->
+  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.2),_transparent)] pointer-events-none"></div>
+
+  <h1 class="text-6xl font-extrabold mb-6 drop-shadow-lg">Rafed Ali Beier</h1>
+  <p class="max-w-xl text-xl md:text-2xl mb-10 drop-shadow-md">
+    Datamatikerstuderende • Fullstack interesseret • Bygger digitale løsninger
+  </p>
+
+  <a href="#om" aria-label="Scroll ned til om sektion" class="mt-12 animate-bounce inline-flex items-center text-white hover:text-blue-300 transition">
+    <span class="mr-3 text-lg font-semibold tracking-wide">Scroll ned</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 9l-7 7-7-7" />
+    </svg>
+  </a>
+</section>
+
 
 <!-- OM MIG -->
 <section id="om" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
