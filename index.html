@@ -145,7 +145,7 @@
 
 
 <!-- OM MIG -->
-<section id="om" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
+<section id="om" data-aos="fade-up" class="scroll-mt-28 py-16 bg-white px-4 border-t border-gray-200">
   <div class="max-w-4xl mx-auto">
     <div class="text-center">
       <img src="Me.jpg" alt="Rafed Ali Beier – profilbillede" class="w-60 h-60 rounded-full mx-auto mb-6 shadow-lg object-cover" />
@@ -183,7 +183,7 @@
 </section>
 
 
-<section id="erfaring" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
+<section id="erfaring" data-aos="fade-up" class="scroll-mt-28 py-16 bg-white px-4 border-t border-gray-200">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold mb-6 text-gray-800 text-center">Erfaring</h2>
 
@@ -222,7 +222,7 @@
 
 
 
-<section id="uddannelse" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
+<section id="uddannelse" data-aos="fade-up" class="scroll-mt-28 py-16 bg-white px-4 border-t border-gray-200">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold mb-6 text-gray-800 text-center">Uddannelse</h2>
 
@@ -265,7 +265,7 @@
   }
 </style>
 
-<section id="techstack" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
+<section id="techstack" data-aos="fade-up" class="scroll-mt-28 py-16 bg-white px-4 border-t border-gray-200">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Tech Stack</h2>
 
@@ -354,7 +354,7 @@
 </div>
 
 <!-- Power Platform -->
-<section id="powerplatform" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200">
+<section id="powerplatform" class="scroll-mt-28 py-16 bg-white px-4 border-t border-gray-200">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-2xl font-semibold text-gray-800 text-center mt-16 mb-8">
       Microsoft Power Platform - Business Intelligence & Automatisering
@@ -430,22 +430,33 @@
 </style>	  
 
 		  
-<section id="projekter" data-aos="fade-up" class="scroll-mt-32 py-16 bg-white px-4 border-t border-gray-200 mb-6">
+<section id="projekter" data-aos="fade-up" class="scroll-mt-28 py-16 bg-white px-4 border-t border-gray-200 mb-6">
   <div class="max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Projekter</h2>
 
-    <!-- Filter knapper -->
-    <div class="flex justify-center mb-12 space-x-6">
-      <button onclick="filterProjects('all', event)" class="btn-filter active">Alle
- <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18L22 12L16 6"/></svg>
-</button>
-      <button onclick="filterProjects('tech', event)" class="btn-filter">Tech Projekter
- <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18L22 12L16 6"/></svg>
-</button>
-      <button onclick="filterProjects('bi', event)" class="btn-filter">Business Intelligence Projekter
-<svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18"/></svg>
-</button>
-    </div>
+<!-- Filter knapper -->
+<div class="flex justify-center mb-12 space-x-6">
+  <button onclick="filterProjects('all', event)" class="btn-filter active flex items-center space-x-2">
+    <span>Alle</span>
+    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
+      <path d="M16 18L22 12L16 6"/>
+    </svg>
+  </button>
+
+  <button onclick="filterProjects('tech', event)" class="btn-filter flex items-center space-x-2">
+    <span>Tech Projekter</span>
+    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
+      <path d="M16 18L22 12L16 6"/>
+    </svg>
+  </button>
+
+  <button onclick="filterProjects('bi', event)" class="btn-filter flex items-center space-x-2">
+    <span>Business Intelligence Projekter</span>
+    <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
+      <path d="M3 12h18M12 3v18"/>
+    </svg>
+  </button>
+</div>
 
     <!-- Projekter container -->
     <div id="projects-container" class="grid md:grid-cols-2 gap-8">
