@@ -96,7 +96,24 @@
     });
   });
 </script>
+<style>
+    .btn-filter {
+      color: #4B5563;
+      transition: color 0.3s;
+    }
 
+    .btn-filter.active {
+      color: #2563EB;
+    }
+
+    .btn-filter svg {
+      transition: stroke 0.3s;
+    }
+
+    .btn-filter.active svg {
+      stroke: #2563EB;
+    }
+  </style>
 <style>
 
 html, body {
@@ -658,6 +675,14 @@ window.addEventListener('scroll', () => {
   }
 });
 </script> 
+
+ <script>
+    function filterProjects(category, event) {
+      document.querySelectorAll('.btn-filter').forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      // Din filtreringslogik her
+    }
+  </script>
 
   </body>
 </html>
