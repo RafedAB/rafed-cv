@@ -25,10 +25,10 @@
   </div>
   <nav id="mobile-menu" class="hidden px-4 pb-4">
     <ul class="space-y-3 text-lg">
-      <li><a href="#forside" class="block text-gray-700 hover:text-blue-600">Forside</a></li>
-      <li><a href="#om" class="block text-gray-700 hover:text-blue-600">Om mig</a></li>
-      <li><a href="#erfaring" class="block text-gray-700 hover:text-blue-600">Erfaring</a></li>
-      <li><a href="#uddannelse" class="block text-gray-700 hover:text-blue-600">Uddannelse</a></li>
+      <li><a href="#forside" class="nav-link block text-gray-700 hover:text-blue-600">Forside</a></li>
+      <li><a href="#om" class="nav-link block text-gray-700 hover:text-blue-600">Om mig</a></li>
+      <li><a href="#erfaring" class="nav-link block text-gray-700 hover:text-blue-600">Erfaring</a></li>
+      <li><a href="#uddannelse" class="nav-link block text-gray-700 hover:text-blue-600">Uddannelse</a></li>
       <li>
         <button id="toggle-techstack-submenu" class="w-full flex justify-between items-center text-gray-700 hover:text-blue-600 focus:outline-none" aria-expanded="false">
           Tech stack
@@ -37,11 +37,11 @@
           </svg>
         </button>
         <ul id="techstack-submenu" class="hidden ml-4 mt-2 space-y-2">
-          <li><a href="#powerplatform" class="text-gray-600 hover:text-blue-500">Power Platform</a></li>
+          <li><a href="#powerplatform" class="nav-link text-gray-600 hover:text-blue-500">Power Platform</a></li>
         </ul>
       </li>
-      <li><a href="#projekter" class="block text-gray-700 hover:text-blue-600">Projekter</a></li>
-      <li><a href="#kontakt" class="block text-gray-700 hover:text-blue-600">Kontakt</a></li>
+      <li><a href="#projekter" class="nav-link block text-gray-700 hover:text-blue-600">Projekter</a></li>
+      <li><a href="#kontakt" class="nav-link block text-gray-700 hover:text-blue-600">Kontakt</a></li>
     </ul>
   </nav>
 </header>
@@ -51,14 +51,14 @@
   <nav aria-label="Primær navigation" class="hidden md:block w-64 bg-white shadow-lg fixed top-0 left-0 h-full p-6 space-y-6 z-50">
     <h1 class="text-2xl font-bold text-gray-800">Rafed Ali Beier</h1>
     <ul class="space-y-3 text-lg">
-      <li><a href="#forside" class="nav-link font-bold">Forside</a></li>
+      <li><a href="#forside" class="nav-link">Forside</a></li>
       <li><a href="#om" class="nav-link">Om mig</a></li>
       <li><a href="#erfaring" class="nav-link">Erfaring</a></li>
       <li><a href="#uddannelse" class="nav-link">Uddannelse</a></li>
       <li>
         <a href="#techstack" class="nav-link">Tech stack</a>
         <ul class="ml-4 mt-2 space-y-2">
-          <li><a href="#powerplatform" class="text-gray-600 hover:text-blue-500">Power Platform</a></li>
+          <li><a href="#powerplatform" class="nav-link text-gray-600 hover:text-blue-500">Power Platform</a></li>
         </ul>
       </li>
       <li><a href="#projekter" class="nav-link">Projekter</a></li>
@@ -66,6 +66,50 @@
     </ul>
   </nav>
 </div>
+
+<!-- MAIN CONTENT -->
+<main class="md:ml-64 p-8">
+  <!-- Demo sections for testing -->
+  <section id="forside" class="min-h-screen bg-blue-50 p-8 rounded-lg mb-8">
+    <h2 class="text-3xl font-bold mb-4">Forside</h2>
+    <p class="text-gray-700">Dette er forsiden. Scroll ned for at se navigation i aktion.</p>
+  </section>
+
+  <section id="om" class="min-h-screen bg-green-50 p-8 rounded-lg mb-8">
+    <h2 class="text-3xl font-bold mb-4">Om mig</h2>
+    <p class="text-gray-700">Dette er "Om mig" sektionen.</p>
+  </section>
+
+  <section id="erfaring" class="min-h-screen bg-yellow-50 p-8 rounded-lg mb-8">
+    <h2 class="text-3xl font-bold mb-4">Erfaring</h2>
+    <p class="text-gray-700">Dette er erfarings sektionen.</p>
+  </section>
+
+  <section id="uddannelse" class="min-h-screen bg-purple-50 p-8 rounded-lg mb-8">
+    <h2 class="text-3xl font-bold mb-4">Uddannelse</h2>
+    <p class="text-gray-700">Dette er uddannelses sektionen.</p>
+  </section>
+
+  <section id="techstack" class="min-h-screen bg-red-50 p-8 rounded-lg mb-8">
+    <h2 class="text-3xl font-bold mb-4">Tech Stack</h2>
+    <p class="text-gray-700">Dette er tech stack sektionen.</p>
+  </section>
+
+  <section id="powerplatform" class="min-h-screen bg-indigo-50 p-8 rounded-lg mb-8">
+    <h2 class="text-3xl font-bold mb-4">Power Platform</h2>
+    <p class="text-gray-700">Dette er Power Platform sektionen.</p>
+  </section>
+
+  <section id="projekter" class="min-h-screen bg-pink-50 p-8 rounded-lg mb-8">
+    <h2 class="text-3xl font-bold mb-4">Projekter</h2>
+    <p class="text-gray-700">Dette er projekt sektionen.</p>
+  </section>
+
+  <section id="kontakt" class="min-h-screen bg-orange-50 p-8 rounded-lg mb-8">
+    <h2 class="text-3xl font-bold mb-4">Kontakt</h2>
+    <p class="text-gray-700">Dette er kontakt sektionen.</p>
+  </section>
+</main>
 
 <script>
   const menuToggle = document.getElementById('menu-toggle');
@@ -88,26 +132,63 @@
 
   // Active link ved scroll (både mobil og desktop)
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('nav a');
+  const navLinks = document.querySelectorAll('.nav-link'); // Changed to use class instead of 'nav a'
 
-  window.addEventListener('scroll', () => {
+  function updateActiveLink() {
     let current = '';
+    
+    // Find current section
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      if (window.scrollY >= sectionTop) {
+      const sectionTop = section.offsetTop - 150; // Adjusted offset
+      const sectionHeight = section.offsetHeight;
+      
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
         current = section.getAttribute('id');
       }
     });
 
+    // Update nav links
     navLinks.forEach(link => {
-      link.classList.remove('font-bold');
+      link.classList.remove('font-bold', 'text-blue-600');
       link.removeAttribute('aria-current');
-      if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('font-bold');
+      
+      const href = link.getAttribute('href');
+      if (href === '#' + current) {
+        link.classList.add('font-bold', 'text-blue-600');
         link.setAttribute('aria-current', 'page');
       }
     });
+  }
+
+  // Handle click events for smooth scrolling and immediate highlighting
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        // Smooth scroll to section
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+        
+        // Close mobile menu if open
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+        
+        // Immediate highlight (optional, scroll event will also trigger)
+        setTimeout(() => {
+          updateActiveLink();
+        }, 100);
+      }
+    });
   });
+
+  // Listen for scroll events
+  window.addEventListener('scroll', updateActiveLink);
+  
+  // Set initial active link
+  document.addEventListener('DOMContentLoaded', updateActiveLink);
 </script>
 
 <style>
@@ -115,22 +196,34 @@
     position: relative;
     display: inline-block;
     color: #4B5563;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
   }
+  
   .nav-link:hover {
     color: #2563EB;
   }
+  
   .nav-link::before {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     height: 2px;
     width: 0;
     background-color: #2563EB;
-    transition: width 0.3s;
+    transition: width 0.3s ease;
   }
+  
   .nav-link:hover::before {
+    width: 100%;
+  }
+  
+  /* Active state styling */
+  .nav-link.font-bold {
+    color: #2563EB;
+  }
+  
+  .nav-link.font-bold::before {
     width: 100%;
   }
 </style>
