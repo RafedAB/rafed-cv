@@ -47,7 +47,7 @@
   <body class="pt-20">
 
     <!-- MOBIL HEADER -->
-    <header class="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 md:hidden">
+    <header class="bg-white shadow-lg fixed top-0 left-0 right-0 z-60 md:hidden">
       <div class="flex justify-between px-4 py-4">
         <h1 class="text-xl font-bold text-blue-700">Rafed Ali Beier</h1>
         <button id="menu-toggle" class="text-gray-600 focus:outline-none" aria-label="Toggle menu">
@@ -70,21 +70,21 @@
       </nav>
     </header>
 
-    <div class="flex">
-      <!-- SIDEMENU -->
-      <nav aria-label="Primær navigation" class="hidden md:block w-64 bg-white shadow-lg fixed top-0 left-0 h-full p-6 space-y-6 z-50 pt-20">
-        <h1 class="text-2xl font-bold text-gray-800">Rafed Ali Beier</h1>
-        <ul class="space-y-3 text-lg">
-          <li><a href="#forside" class="nav-link font-bold">Forside</a></li>
-          <li><a href="#om" class="nav-link">Om mig</a></li>
-          <li><a href="#erfaring" class="nav-link">Erfaring</a></li>
-          <li><a href="#uddannelse" class="nav-link">Uddannelse</a></li>
-          <li><a href="#techstack" class="nav-link">Tech stack</a></li>
-          <li><a href="#powerplatform" class="nav-link">Power Platform</a></li>
-          <li><a href="#projekter" class="nav-link">Projekter</a></li>
-          <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
-        </ul>
-      </nav>
+<div class="flex">
+  <!-- SIDEMENU til PC -->
+  <nav class="hidden md:block w-64 bg-white shadow-lg fixed top-0 left-0 h-full p-6 pt-20 z-50">
+    <h1 class="text-2xl font-bold text-gray-800">Rafed Ali Beier</h1>
+    <ul class="space-y-3 text-lg">
+      <li><a href="#forside" class="nav-link font-bold">Forside</a></li>
+      <li><a href="#om" class="nav-link">Om mig</a></li>
+      <li><a href="#erfaring" class="nav-link">Erfaring</a></li>
+      <li><a href="#uddannelse" class="nav-link">Uddannelse</a></li>
+      <li><a href="#techstack" class="nav-link">Tech stack</a></li>
+      <li><a href="#powerplatform" class="nav-link">Power Platform</a></li>
+      <li><a href="#projekter" class="nav-link">Projekter</a></li>
+      <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
 
 
       <!-- HOVEDINDHOLD -->
@@ -506,9 +506,10 @@ function filterProjects(category, btn) {
   btn.classList.add('active');
 
   // Projekter
-  const container = document.getElementById('projects-container');
-  const projects = Array.from(container.querySelectorAll('.project-card'));
-  const noProjectsMsg = document.getElementById('no-projects-msg');
+const container = document.getElementById('projects-container');
+const projects = container.querySelectorAll('.project-card'); // kun projekter
+const noProjectsMsg = document.getElementById('no-projects-msg');
+
 
   projects.forEach(proj => {
     if (category === 'all' || proj.classList.contains(category)) {
