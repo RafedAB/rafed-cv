@@ -155,19 +155,19 @@ main {
     min-height: 100vh;
   }
 
-#mobile-menu {
-  /* fjern max-height her */
-  overflow: visible; /* nav skal ikke skjules, kun ul */
-}
-
 #mobile-menu ul {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
-  padding: 0; /* fjern evt. padding der kan skabe gap */
+  padding: 0; /* fjern top/bund padding for animation */
   margin: 0;
+  padding-left: 1rem; /* tilføj venstre indryk for links */
+  padding-right: 1rem; /* evt. højre indryk */
 }
 
+#mobile-menu ul li {
+  padding: 0.5rem 0; /* spacing mellem links */
+}
 	  </style>
 
 
