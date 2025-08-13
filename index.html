@@ -501,15 +501,15 @@
 
 <script>
 function filterProjects(category, btn) {
-  // Fjern 'active' fra alle knapper
-  const buttons = document.querySelectorAll('.btn-filter');
-  buttons.forEach(b => b.classList.remove('active'));
-
-  // Tilføj 'active' til den knap der blev klikket
+  // Active knap
+  document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 
-  // Filtrér projekter
-  const projects = document.querySelectorAll('.project-card');
+  // Projekter
+  const container = document.getElementById('projects-container');
+  const projects = Array.from(container.querySelectorAll('.project-card'));
+  const noProjectsMsg = document.getElementById('no-projects-msg');
+
   projects.forEach(proj => {
     if (category === 'all' || proj.classList.contains(category)) {
       proj.classList.remove('section-hidden');
@@ -517,49 +517,18 @@ function filterProjects(category, btn) {
       proj.classList.add('section-hidden');
     }
   });
-}
 
-
-    requestAnimationFrame(() => {
-      // Beregn ny højde for container
-      let visibleProjects = projects.filter(p => !p.classList.contains('section-hidden'));
-      let totalHeight = 0;
-      visibleProjects.forEach(p => {
-        totalHeight += p.offsetHeight + parseInt(getComputedStyle(p).marginBottom);
-      });
-
-      if (visibleProjects.length === 0) {
-        noProjectsMsg.style.display = 'block';
-        totalHeight = noProjectsMsg.offsetHeight + 48; // margin top
-      } else {
-        noProjectsMsg.style.display = 'none';
-      }
-
-      container.style.height = oldHeight + 'px';
-      requestAnimationFrame(() => {
-        container.style.height = totalHeight + 'px';
-      });
-
-      container.addEventListener('transitionend', function handler() {
-        container.style.height = 'auto';
-        container.removeEventListener('transitionend', handler);
-      });
-    });
+  // Opdater “Ingen projekter” besked
+  const visibleProjects = projects.filter(p => !p.classList.contains('section-hidden'));
+  if (visibleProjects.length === 0) {
+    noProjectsMsg.style.display = 'block';
+  } else {
+    noProjectsMsg.style.display = 'none';
   }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    // Initial visning: vis alle projekter
-    const activeBtn = document.querySelector('.btn-filter.active');
-    if (activeBtn) filterProjects('all', { currentTarget: activeBtn });
-  });
+}
 </script>
 
 <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
 
 	.hidden {
   display: none !important;
