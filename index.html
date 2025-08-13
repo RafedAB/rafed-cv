@@ -12,6 +12,8 @@
       }
       html, body {
         overflow-x: hidden;
+  		margin: 0;
+  		padding: 0;
       }
       .nav-link {
         position: relative;
@@ -42,9 +44,23 @@
       .pointer-events-none {
         pointer-events: none;
       }
+
+		#forside {
+  margin-top: 0;
+  padding-top: 0;
+}
+		#kontakt {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+section {
+  min-height: 100vh; /* Fylder hele viewport-højden */
+  margin: 0;
+}
     </style>
   </head>
-  <body class="pt-20">
+  <body>
 
 <!-- MOBIL HEADER -->
 <header class="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 md:hidden">
@@ -131,6 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
     display: none;
   }
 }
+main {
+    min-height: 100vh;
+  }
 	  </style>
 
 
