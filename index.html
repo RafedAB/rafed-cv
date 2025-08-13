@@ -504,12 +504,16 @@ main {
         </svg>
       </button>
     </div>
-
+<style>
+.shadow-around {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+</style>
     <!-- Projekter container -->
     <div id="projects-container" class="grid md:grid-cols-2 gap-8">
 
       <!-- Tech Projekt 1 -->
-      <div class="project-card relative w-full sm:w-80 md:w-auto max-w-md h-auto mx-auto rounded-xl shadow-2xl bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:shadow-2xl hover:scale-105">
+      <div class="project-card relative w-full sm:w-80 md:w-auto max-w-md h-auto mx-auto rounded-xl shadow-around bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
         <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
           <svg class="w-6 h-6 sm:w-9 sm:h-9 -ml-1 sm:-ml-2 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 18L22 12L16 6"/>
