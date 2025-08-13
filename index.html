@@ -125,8 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 	  <style>
-
-		  #mobile-menu {
+#mobile-menu {
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
@@ -136,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
   transform: translateY(0);
   opacity: 1;
 }
-		  
+
 /* Skjul PC-menu på små skærme */
 @media (max-width: 1023px) {
   #desktop-menu {
@@ -146,23 +145,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 @media (min-width: 1024px) {
   #desktop-menu {
-    position: fixed; /* Sørger for at den følger scroll */
-    top: 0; /* Starter helt oppe */
+    position: fixed;
+    top: 0;
     left: 0;
-    height: 100vh; /* Fylder hele højden */
-    background-color: white; /* Ensfarvet baggrund */
-    z-index: 50; /* Ovenpå indhold */
+    height: 100vh;
+    background-color: white;
+    z-index: 50;
   }
-}
-/* Skjul mobil-menu på store skærme */
-@media (min-width: 1024px) {
+  
+  /* Skjul mobil-menu på store skærme */
   #mobile-menu {
-    display: none;
+    display: none !important;
   }
 }
-main {
-    min-height: 100vh;
+
+@media (max-width: 1023px) {
+  #mobile-menu {
+    display: block;
   }
+}
+
+main {
+  min-height: 100vh;
+}
 	  </style>
 
 
