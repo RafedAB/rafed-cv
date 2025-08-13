@@ -515,14 +515,17 @@
 
     const oldHeight = container.offsetHeight;
 
-    // Vis/skjul projekter baseret på kategori
-    projects.forEach(proj => {
-      if (category === 'all' || proj.classList.contains(category)) {
-        proj.classList.remove('section-hidden');
-      } else {
-        proj.classList.add('section-hidden');
-      }
-    });
+// Vis/skjul projekter baseret på kategori
+projects.forEach(proj => {
+  if (category === 'all') {
+    proj.classList.remove('section-hidden');
+  } else if (proj.classList.contains(category)) {
+    proj.classList.remove('section-hidden');
+  } else {
+    proj.classList.add('section-hidden');
+  }
+});
+
 
     requestAnimationFrame(() => {
       // Beregn ny højde for container
