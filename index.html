@@ -73,7 +73,7 @@
 </header>
 
 <!-- SIDEMENU til PC -->
-<nav class="hidden md:block w-64 bg-white shadow-lg fixed top-0 left-0 h-full p-6 pt-20 z-30">
+<nav id="desktop-menu" class="w-64 bg-white shadow-lg fixed top-0 left-0 h-full p-6 pt-20 z-30">
   <h1 class="text-2xl font-bold text-gray-800">Rafed Ali Beier</h1>
   <ul class="space-y-3 text-lg">
     <li><a href="#forside" class="nav-link font-bold">Forside</a></li>
@@ -107,6 +107,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+	  <style>
+		  /* Skjul PC-menu på små skærme */
+@media (max-width: 1023px) {
+  #desktop-menu {
+    display: none;
+  }
+}
+
+/* Skjul mobil-menu på store skærme */
+@media (min-width: 1024px) {
+  #mobile-menu {
+    display: none;
+  }
+}
+	  </style>
 
 
       <!-- HOVEDINDHOLD -->
