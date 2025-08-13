@@ -366,7 +366,7 @@ main {
 <!-- Under læring -->
 <div class="mt-6">
   <h2 class="text-2xl font-semibold text-gray-800 text-center mt-16 mb-8">Under læring</h2>
-  <div class="grid grid-cols-2 gap-8 max-w-7xl mx-auto pb-12">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
     
     <div class="relative max-w-md w-full h-auto mx-auto rounded-xl shadow-top bg-white flex flex-col items-center justify-center p-6 transition-transform duration-300 hover:scale-105">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-24 h-24 object-contain mb-4" loading="lazy" decoding="async" />
@@ -389,7 +389,7 @@ main {
 
 <!-- Power Platform -->
 <section id="powerplatform" class="scroll-mt-28 py-16 bg-white px-4 border-t border-gray-200">
-  <div class="max-w-7xl mx-auto">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
     <h2 class="text-2xl font-semibold text-gray-800 text-center mt-16 mb-8">
       Microsoft Power Platform - Business Intelligence & Automatisering
     </h2>
@@ -469,7 +469,7 @@ main {
     <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Projekter</h2>
 
     <!-- Filter knapper -->
-    <div class="flex justify-center mb-12 space-x-6">
+    <div class="flex flex-wrap justify-center mb-12 gap-4">
       <button onclick="filterProjects('all', this)" class="btn-filter active flex items-center space-x-2">
         <span>Alle</span>
         <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
@@ -496,7 +496,8 @@ main {
     </div>
 
     <!-- Projekter container -->
-    <div id="projects-container" class="grid md:grid-cols-2 gap-8">
+    <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+	  <div class="project-card tech bg-white rounded-lg shadow p-4 sm:p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1">
 
       <!-- Tech Projekt 1 -->
       <div class="project-card tech bg-white rounded-lg shadow p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
