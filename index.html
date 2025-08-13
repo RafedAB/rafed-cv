@@ -478,24 +478,32 @@ main {
   <div class="max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Projekter</h2>
 
-    <!-- Filter knapper -->
-    <div class="flex flex-wrap justify-center mb-12 gap-3 sm:gap-6">
-      <button onclick="filterProjects('all', this)" class="btn-filter active flex items-center space-x-2">
-        <span>Alle</span>
-        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
-          <path d="M16 18L22 12L16 6"/>
-        </svg>
-        <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
-          <path d="M3 12h18M12 3v18"/>
-        </svg>
-      </button>
-
-      <button onclick="filterProjects('tech', this)" class="btn-filter flex items-center space-x-2">
-        <span>Tech Projekter</span>
-        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
-          <path d="M16 18L22 12L16 6"/>
-        </svg>
-      </button>
+<!-- Filter knapper -->
+<div class="flex flex-col sm:flex-row justify-center mb-12 space-y-3 sm:space-y-0 sm:space-x-6 px-4">
+  <button onclick="filterProjects('all', this)" class="btn-filter active flex items-center justify-center space-x-2 w-full sm:w-auto">
+    <span class="text-sm sm:text-base">Alle</span>
+    <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
+      <path d="M16 18L22 12L16 6"/>
+    </svg>
+    <svg class="w-5 h-5 text-yellow-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
+      <path d="M3 12h18M12 3v18"/>
+    </svg>
+  </button>
+  
+  <button onclick="filterProjects('tech', this)" class="btn-filter flex items-center justify-center space-x-2 w-full sm:w-auto">
+    <span class="text-sm sm:text-base">Tech Projekter</span>
+    <svg class="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
+      <path d="M16 18L22 12L16 6"/>
+    </svg>
+  </button>
+  
+  <button onclick="filterProjects('bi', this)" class="btn-filter flex items-center justify-center space-x-2 w-full sm:w-auto">
+    <span class="text-sm sm:text-base break-words">BI Projekter</span>
+    <svg class="w-5 h-5 text-yellow-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
+      <path d="M3 12h18M12 3v18"/>
+    </svg>
+  </button>
+</div>
 
       <button onclick="filterProjects('bi', this)" class="btn-filter flex items-center space-x-2">
         <span>Business Intelligence Projekter</span>
