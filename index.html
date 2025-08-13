@@ -76,8 +76,8 @@ will-change: transform, opacity;
   </div>
 
   <!-- Mobilmenu -->
-	<nav id="mobile-menu" class="overflow-hidden transition-all duration-300 ease-in-out fixed left-0 right-0 bg-white shadow-lg md:hidden z-40">
-  	<ul class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+	<nav id="mobile-menu" class="fixed top-12 left-0 right-0 bg-white shadow-lg md:hidden z-40">
+  <ul class="overflow-hidden max-h-0 transition-all duration-300 ease-in-out px-4">
       <li><a href="#forside" class="block text-gray-700 hover:text-blue-600">Forside</a></li>
       <li><a href="#om" class="block text-gray-700 hover:text-blue-600">Om mig</a></li>
       <li><a href="#erfaring" class="block text-gray-700 hover:text-blue-600">Erfaring</a></li>
@@ -156,10 +156,18 @@ main {
   }
 
 #mobile-menu {
+  /* fjern max-height her */
+  overflow: visible; /* nav skal ikke skjules, kun ul */
+}
+
+#mobile-menu ul {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
+  padding: 0; /* fjern evt. padding der kan skabe gap */
+  margin: 0;
 }
+
 	  </style>
 
 
