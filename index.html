@@ -73,8 +73,8 @@
 </header>
 
 <!-- SIDEMENU til PC -->
-<nav id="desktop-menu" class="w-64 bg-white shadow-lg fixed top-0 left-0 h-full p-6 pt-20 z-30">
-  <h1 class="text-2xl font-bold text-gray-800">Rafed Ali Beier</h1>
+<nav id="desktop-menu" class="w-64 bg-white shadow-lg fixed top-0 left-0 h-full p-6 pt-4 z-30">
+  <h1 class="text-2xl font-bold text-gray-800 mb-6">Rafed Ali Beier</h1>
   <ul class="space-y-3 text-lg">
     <li><a href="#forside" class="nav-link font-bold">Forside</a></li>
     <li><a href="#om" class="nav-link">Om mig</a></li>
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 	  <style>
-		  /* Skjul PC-menu på små skærme */
+/* Skjul PC-menu på små skærme */
 @media (max-width: 1023px) {
   #desktop-menu {
     display: none;
@@ -117,7 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 @media (min-width: 1024px) {
   #desktop-menu {
-    top: 4rem; /* justér efter behov */
+    position: fixed; /* Sørger for at den følger scroll */
+    top: 0; /* Starter helt oppe */
+    left: 0;
+    height: 100vh; /* Fylder hele højden */
+    background-color: white; /* Ensfarvet baggrund */
+    z-index: 50; /* Ovenpå indhold */
   }
 }
 /* Skjul mobil-menu på store skærme */
@@ -138,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <h1 class="text-6xl font-extrabold mb-6 drop-shadow-lg">Rafed Ali Beier</h1>
 <p class="text-xl md:text-2xl mb-10 drop-shadow-md text-center md:whitespace-nowrap leading-relaxed">
-  Datamatikerstuderende • Fullstack interesseret • Bygger digitale løsninger
+  Datamatikerstuderende • BI-udvikler • Fullstack interesseret • Bygger digitale løsninger
 </p>
 
   <a href="#om" aria-label="Scroll ned til om sektion" class="mt-12 animate-bounce inline-flex items-center text-white hover:text-blue-300 transition">
