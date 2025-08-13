@@ -76,8 +76,8 @@ will-change: transform, opacity;
   </div>
 
   <!-- Mobilmenu -->
-  <nav id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out fixed top-16 left-0 right-0 bg-white shadow-lg md:hidden z-40">
-  <ul class="space-y-3 px-4 py-4 text-lg">
+	<nav id="mobile-menu" class="overflow-hidden transition-all duration-300 ease-in-out fixed left-0 right-0 bg-white shadow-lg md:hidden z-40">
+  	<ul class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
       <li><a href="#forside" class="block text-gray-700 hover:text-blue-600">Forside</a></li>
       <li><a href="#om" class="block text-gray-700 hover:text-blue-600">Om mig</a></li>
       <li><a href="#erfaring" class="block text-gray-700 hover:text-blue-600">Erfaring</a></li>
@@ -108,23 +108,25 @@ will-change: transform, opacity;
 
 <!-- JS -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("mobile-menu");
+const toggle = document.getElementById("menu-toggle");
+const menuList = document.querySelector("#mobile-menu ul");
 
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("open"); // Tilføj/fjern open-klasse
-  });
+toggle.addEventListener("click", () => {
+  if (menuList.style.maxHeight && menuList.style.maxHeight !== "0px") {
+    menuList.style.maxHeight = "0px";
+  } else {
+    menuList.style.maxHeight = menuList.scrollHeight + "px";
+  }
+});
 
-  menu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("open"); // Luk menu ved klik på link
-    });
+menuList.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    menuList.style.maxHeight = "0px";
   });
 });
 </script>
 
-	  <!-- JS -->
+	  <!-- CSS -->
 	  <style>
 /* Skjul PC-menu på små skærme */
 @media (max-width: 1023px) {
@@ -157,10 +159,6 @@ main {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
-}
-
-#mobile-menu.open {
-  max-height: 500px; /* Juster efter indholdets højde */
 }
 	  </style>
 
