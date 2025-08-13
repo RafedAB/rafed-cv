@@ -479,7 +479,7 @@ main {
     <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Projekter</h2>
 
     <!-- Filter knapper -->
-    <div class="flex justify-center mb-12 space-x-6">
+    <div class="flex flex-wrap justify-center mb-12 gap-3 sm:gap-6">
       <button onclick="filterProjects('all', this)" class="btn-filter active flex items-center space-x-2">
         <span>Alle</span>
         <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;">
@@ -509,14 +509,14 @@ main {
     <div id="projects-container" class="grid md:grid-cols-2 gap-8">
 
       <!-- Tech Projekt 1 -->
-      <div class="project-card tech bg-white rounded-lg shadow p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
+      <div class="project-card bg-white rounded-lg shadow p-4 sm:p-6 w-full sm:w-auto max-w-md transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
         <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
           <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 18L22 12L16 6"/>
           </svg>
           Alfa Laval Kolding – Ferieplanlægningssystem
         </h4>
-        <p class="text-gray-700 text-justify leading-relaxed mb-4">
+        <p class="text-gray-700 text-justify leading-relaxed sm:leading-relaxed">
           Som en del af mit studie udviklede mit projektteam og jeg et digitalt ferieplanlægningssystem til lageret hos Alfa Laval i Kolding.
           Systemet skulle reducere tidsforbruget på ferieplanlægning og sikre en retfærdig fordeling af ferie. Projektet omfattede udvikling af en brugervenlig grænseflade, design af en algoritme til ferieallokering samt implementering af en database, der tager højde for bemandings- og kompetencekrav i virksomheden.
         </p>
@@ -528,14 +528,14 @@ main {
       </div>
 
       <!-- Tech Projekt 2 -->
-      <div class="project-card tech bg-white rounded-lg shadow p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
+      <div class="project-card bg-white rounded-lg shadow p-4 sm:p-6 w-full sm:w-auto max-w-md transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
         <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
           <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 18L22 12L16 6"/>
           </svg>
           Webapplikation til rejsebureauet GoTurz
         </h4>
-        <p class="text-gray-700 text-justify leading-relaxed mb-4">
+        <p class="text-gray-700 text-justify leading-relaxed sm:leading-relaxed">
           Udviklede en fuldt funktionel prototype af en rejseplatform i ASP.NET Core og Blazor med integration til fly- og hotel-API’er. Applikationen præsenterer komplette rejsepakker med samlet pris, tilbyder brugeroprettelse, login, rollebaseret adgang, bookingsystem og realtidschat.
           Backend er baseret på SQL Server og Entity Framework, hostet i Microsoft Azure. Her har der også været fokus på UI/UX, sikkerhed og skalerbarhed.
         </p>
@@ -551,14 +551,14 @@ main {
       </div>
 
       <!-- BI Projekt -->
-      <div class="project-card bi bg-white rounded-lg shadow p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
+      <div class="project-card bg-white rounded-lg shadow p-4 sm:p-6 w-full sm:w-auto max-w-md transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
         <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
           <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 12h18M12 3v18"/>
           </svg>
           Alfa Laval Kolding – Power BI & Power Automate
         </h4>
-        <p class="text-gray-700 text-justify leading-relaxed mb-4">
+        <p class="text-gray-700 text-justify leading-relaxed sm:leading-relaxed">
           Udviklede en Power BI-visualisering af returordrer over 2 og 3 måneder for Alfa Laval, hvor ordrer ældre end 2 måneder krævede kundeopfølgning, og ordrer over 3 måneder automatisk blev slettet i ERP-systemet.
           <br>
           Visualiseringen omfattede kundens ordrenummer, dato for anmodning, returnummer, status for varehusmodtagelse og relevante notater.
@@ -572,14 +572,14 @@ main {
       </div>
 
 		<!-- BI Projekt 2 -->
-<div class="project-card bi bg-white rounded-lg shadow p-6 transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
+<div class="project-card bg-white rounded-lg shadow p-4 sm:p-6 w-full sm:w-auto max-w-md transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 transform">
   <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
     <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M3 12h18M12 3v18"/>
     </svg>
     Alfa Laval Kolding – Dashboard for dummy-ordrer
   </h4>
-  <p class="text-gray-700 text-justify leading-relaxed mb-4">
+  <p class="text-gray-700 text-justify leading-relaxed sm:leading-relaxed">
     Jeg udviklede et Power BI-dashboard, der overvåger bestilte dummy-ordrer, som ikke er blevet afhentet eller afsendt fra Alfa Lavals varehus inden for en to-ugers periode. Dashboardet giver procesansvarlige et hurtigt og intuitivt overblik over disse ordrer, så de effektivt kan træffe beslutninger om opfølgning – enten ved at kontakte kunden direkte eller ved at fjerne uaktuelle dummy-ordrer. 
     <br><br>
     Formålet med projektet var at skabe et brugervenligt værktøj, som optimerer den daglige drift og giver indsigt i processer, der tidligere krævede manuel kontrol. Ved at automatisere overvågning og visualisere data i realtid forbedrer dashboardet både effektivitet og nøjagtighed i ordrebehandlingen.
