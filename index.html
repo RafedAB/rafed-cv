@@ -63,8 +63,8 @@ will-change: transform, opacity;
 
 <!-- MOBIL HEADER -->
 <header class="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 md:hidden">
-  <div class="flex justify-between px-4 py-4 pt-6">
-    <h1 class="text-sm font-bold text-gray-600 leading-snug">
+  <div class="flex justify-between px-4 py-2">
+    <h1 class="text-sm font-bold text-gray-600 leading-tight">
       Rafed Ali Beier<br>
       Datamatikerstuderende & BI udvikler
     </h1>
@@ -75,9 +75,8 @@ will-change: transform, opacity;
     </button>
   </div>
 
-
   <!-- Mobilmenu -->
-  <nav id="mobile-menu" class="overflow-hidden max-h-0 fixed top-16 left-0 right-0 bg-white shadow-lg px-4 pb-4 md:hidden z-40 transition-all duration-300">
+  <nav id="mobile-menu" class="fixed top-16 left-0 right-0 bg-white shadow-lg px-4 pb-4 md:hidden z-40">
     <ul class="space-y-3 text-lg">
       <li><a href="#forside" class="block text-gray-700 hover:text-blue-600">Forside</a></li>
       <li><a href="#om" class="block text-gray-700 hover:text-blue-600">Om mig</a></li>
@@ -108,38 +107,36 @@ will-change: transform, opacity;
 
 <!-- JS -->
 <script>
-const toggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('mobile-menu');
-
-toggle.addEventListener('click', () => {
-  if(menu.classList.contains('max-h-0')){
-    menu.classList.remove('max-h-0');
-    menu.classList.add('max-h-96'); // stor nok til menuen
-  } else {
-    menu.classList.remove('max-h-96');
-    menu.classList.add('max-h-0');
-  }
-});
-	
 document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("mobile-menu");
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-  // Toggle mobilmenu
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
+  menuToggle.addEventListener('click', function() {
+    mobileMenu.classList.toggle('open');
   });
 
   // Luk mobilmenu når et link klikkes
-  menu.querySelectorAll("a").forEach(link => {
+  mobileMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
-      menu.classList.add("hidden");
+      mobileMenu.classList.remove("open");
     });
   });
 });
 </script>
 
 	  <style>
+
+		  #mobile-menu {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+#mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+}
+		  
 /* Skjul PC-menu på små skærme */
 @media (max-width: 1023px) {
   #desktop-menu {
