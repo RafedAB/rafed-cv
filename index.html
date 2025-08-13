@@ -75,7 +75,7 @@ will-change: transform, opacity;
     </button>
   </div>
   <!-- Mobilmenu -->
-  <nav id="mobile-menu" class="fixed top-16 left-0 right-0 bg-white shadow-lg px-4 pb-4 md:hidden z-40">
+  <nav id="mobile-menu" class="fixed left-0 right-0 bg-white shadow-lg px-4 pb-4 md:hidden z-40">
     <ul class="space-y-3 text-lg">
       <li><a href="#forside" class="block text-gray-700 hover:text-blue-600">Forside</a></li>
       <li><a href="#om" class="block text-gray-700 hover:text-blue-600">Om mig</a></li>
@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <style>
 #mobile-menu {
+  top: 64px; /* Position it right below the header */
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
@@ -135,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
   opacity: 1;
 }
 
-/* Skjul PC-menu på små skærme */
+/* Rest of your CSS stays the same */
 @media (max-width: 1023px) {
   #desktop-menu {
     display: none;
