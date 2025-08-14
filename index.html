@@ -487,19 +487,20 @@ main {
 .project-card {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card.section-hidden {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(40px);
+  pointer-events: none;
 }
 
   #projects-container {
     overflow: hidden;
-    transition: height 0.4s ease;
+    transition: height 0.8s ease;
     height: auto;
-    position: relative; /* vigtig for absolute .hidden kort */
+    position: relative;
   }
 
   #no-projects-msg {
@@ -624,14 +625,6 @@ main {
     <img src="Power_BI_Logo.png" alt="Power BI" class="w-7 h-7" />
   </div>
 </div>
-
-      <!-- Ingen projekter besked -->
-      <div id="no-projects-msg" class="hidden text-center text-gray-500 mt-4 col-span-full">
-        Ingen projekter fundet.
-      </div>
-    </div>
-  </div>
-</section>
 		  
 <script>
 function filterProjects(category, btn) {
@@ -641,31 +634,14 @@ function filterProjects(category, btn) {
 
   const container = document.getElementById('projects-container');
   const projects = Array.from(container.querySelectorAll('.project-card'));
-  const noProjectsMsg = document.getElementById('no-projects-msg');
 
-  let visibleCount = 0;
-
-  projects.forEach(proj => {
-    if (category === 'all' || proj.classList.contains(category)) {
-      // Først gør element synligt og start animation
-      proj.style.display = 'block';
-      setTimeout(() => {
-        proj.classList.remove('section-hidden');
-      }, 20); // lille delay så transition kører
-      visibleCount++;
-    } else {
-      // Start fade/slide
-      proj.classList.add('section-hidden');
-      // Når animationen er færdig, fjern fra layout
-      proj.addEventListener('transitionend', function hideAfter() {
-        proj.style.display = 'none';
-        proj.removeEventListener('transitionend', hideAfter);
-      });
-    }
-  });
-
-  // “Ingen projekter” besked
-  noProjectsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+projects.forEach(proj => {
+  if (category === 'all' || proj.classList.contains(category)) {
+    proj.classList.remove('section-hidden');
+  } else {
+    proj.classList.add('section-hidden');
+  }
+});
 }
 
 </script>
