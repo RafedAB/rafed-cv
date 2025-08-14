@@ -92,48 +92,57 @@ will-change: transform, opacity;
 
 
 <!-- SIDEMENU til PC -->
-<nav id="desktop-menu" class="w-64 bg-gradient-to-br from-blue-600 to-indigo-700 fixed top-0 left-0 h-full p-6 pt-4 z-30 text-white shadow-lg">
-  <h1 class="text-xl break-words font-bold text-gray-800 mb-8">
+<nav id="desktop-menu" 
+     class="w-64 fixed top-0 left-0 h-full p-6 pt-4 z-30 text-white shadow-lg 
+            bg-gradient-to-br from-blue-600 to-indigo-700 relative overflow-hidden">
+
+  <!-- Baggrundsmønster som på forsiden -->
+  <div class="absolute inset-0 opacity-10 
+              bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.2),_transparent)] 
+              pointer-events-none"></div>
+
+  <h1 class="text-xl break-words font-bold text-white mb-8 relative z-10">
     Rafed Ali Beier - Datamatikerstuderende & BI udvikler
   </h1>
-  <ul class="space-y-2 text-lg font-medium">
+
+  <ul class="space-y-2 text-lg font-medium relative z-10">
     <li>
-      <a href="#forside" class="nav-link block px-4 py-3 rounded-lg font-bold hover:bg-blue-100 hover:text-blue-700 transition">
+      <a href="#forside" class="nav-link block px-4 py-3 rounded-lg font-bold hover:bg-white hover:bg-opacity-20 transition">
         Forside
       </a>
     </li>
     <li>
-      <a href="#om" class="nav-link block px-4 py-3 rounded-lg hover:bg-blue-100 hover:text-blue-700 transition">
+      <a href="#om" class="nav-link block px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition">
         Om mig
       </a>
     </li>
     <li>
-      <a href="#erfaring" class="nav-link block px-4 py-3 rounded-lg hover:bg-blue-100 hover:text-blue-700 transition">
+      <a href="#erfaring" class="nav-link block px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition">
         Erfaring
       </a>
     </li>
     <li>
-      <a href="#uddannelse" class="nav-link block px-4 py-3 rounded-lg hover:bg-blue-100 hover:text-blue-700 transition">
+      <a href="#uddannelse" class="nav-link block px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition">
         Uddannelse
       </a>
     </li>
     <li>
-      <a href="#techstack" class="nav-link block px-4 py-3 rounded-lg hover:bg-blue-100 hover:text-blue-700 transition">
+      <a href="#techstack" class="nav-link block px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition">
         Tech stack
       </a>
     </li>
     <li>
-      <a href="#powerplatform" class="nav-link block px-4 py-3 rounded-lg hover:bg-blue-100 hover:text-blue-700 transition">
+      <a href="#powerplatform" class="nav-link block px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition">
         Power Platform
       </a>
     </li>
     <li>
-      <a href="#projekter" class="nav-link block px-4 py-3 rounded-lg hover:bg-blue-100 hover:text-blue-700 transition">
+      <a href="#projekter" class="nav-link block px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition">
         Projekter
       </a>
     </li>
     <li>
-      <a href="#kontakt" class="nav-link block px-4 py-3 rounded-lg hover:bg-blue-100 hover:text-blue-700 transition">
+      <a href="#kontakt" class="nav-link block px-4 py-3 rounded-lg hover:bg-white hover:bg-opacity-20 transition">
         Kontakt
       </a>
     </li>
