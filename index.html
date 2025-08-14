@@ -483,24 +483,38 @@ main {
     border-color: #2563eb;
   }
 
-  /* Projekter fade/slide */
 .project-card {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .project-card.section-hidden {
-  opacity: 0;
-  transform: translateY(40px);
-  pointer-events: none;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+}
+
+.project-card.fade-in {
+    animation: fadeInUp 0.3s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
   #projects-container {
     overflow: hidden;
-    transition: height 0.8s ease;
+    transition: height 0.4s ease;
     height: auto;
-    position: relative;
+    position: relative; /* vigtig for absolute .hidden kort */
   }
 
   #no-projects-msg {
@@ -625,6 +639,14 @@ main {
     <img src="Power_BI_Logo.png" alt="Power BI" class="w-7 h-7" />
   </div>
 </div>
+
+      <!-- Ingen projekter besked -->
+      <div id="no-projects-msg" class="hidden text-center text-gray-500 mt-4 col-span-full">
+        Ingen projekter fundet.
+      </div>
+    </div>
+  </div>
+</section>
 		  
 <script>
 function filterProjects(category, btn) {
@@ -633,22 +655,52 @@ function filterProjects(category, btn) {
   btn.classList.add('active');
 
   const container = document.getElementById('projects-container');
-  const projects = Array.from(container.querySelectorAll('.project-card'));
+  const projects = container.querySelectorAll('.project-card');
+  const noProjectsMsg = document.getElementById('no-projects-msg');
 
-projects.forEach(proj => {
-  if (category === 'all' || proj.classList.contains(category)) {
-    proj.classList.remove('section-hidden');
+  // Remove any previous animations
+  projects.forEach(proj => {
+    proj.classList.remove('fade-in');
+  });
+
+  // Filter and animate
+  let visibleCount = 0;
+  let delay = 0;
+
+  projects.forEach(proj => {
+    if (category === 'all' || proj.classList.contains(category)) {
+      // Show this project
+      proj.classList.remove('section-hidden');
+      
+      // Add staggered fade-in animation
+      setTimeout(() => {
+        proj.classList.add('fade-in');
+      }, delay);
+      
+      delay += 100; // 100ms delay between each card
+      visibleCount++;
+    } else {
+      // Hide this project
+      proj.classList.add('section-hidden');
+    }
+  });
+
+  // Handle "no projects" message
+  if (visibleCount === 0) {
+    noProjectsMsg.style.display = 'block';
   } else {
-    proj.classList.add('section-hidden');
+    noProjectsMsg.style.display = 'none';
   }
-});
 }
-
 </script>
 
 <style>
 
 	.hidden {
+  display: none !important;
+}
+
+.section-hidden {
   display: none !important;
 }
 
