@@ -483,20 +483,18 @@ main {
     border-color: #2563eb;
   }
 
-  .project-card {
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .project-card.hidden {
-    opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
+  /* Projekter fade/slide */
+.project-card {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-card.section-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
 
   #projects-container {
     overflow: hidden;
@@ -657,7 +655,7 @@ const noProjectsMsg = document.getElementById('no-projects-msg');
   });
 
   // Opdater “Ingen projekter” besked
-  const visibleProjects = projects.filter(p => !p.classList.contains('section-hidden'));
+  const visibleProjects = Array.from(projects).filter(p => !p.classList.contains('section-hidden'));
   if (visibleProjects.length === 0) {
     noProjectsMsg.style.display = 'block';
   } else {
@@ -669,10 +667,6 @@ const noProjectsMsg = document.getElementById('no-projects-msg');
 <style>
 
 	.hidden {
-  display: none !important;
-}
-
-.section-hidden {
   display: none !important;
 }
 
