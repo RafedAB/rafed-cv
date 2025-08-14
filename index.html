@@ -493,7 +493,6 @@ main {
 .project-card.section-hidden {
   opacity: 0;
   transform: translateY(20px);
-  pointer-events: none;
 }
 
   #projects-container {
@@ -640,30 +639,35 @@ function filterProjects(category, btn) {
   document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 
-  // Projekter
-const container = document.getElementById('projects-container');
-const projects = container.querySelectorAll('.project-card'); // kun projekter
-const noProjectsMsg = document.getElementById('no-projects-msg');
+  const container = document.getElementById('projects-container');
+  const projects = Array.from(container.querySelectorAll('.project-card'));
+  const noProjectsMsg = document.getElementById('no-projects-msg');
 
+  let visibleCount = 0;
 
-projects.forEach(proj => {
-  if (category === 'all' || proj.classList.contains(category)) {
-    proj.style.display = 'block';  // vis kortet først
-    setTimeout(() => proj.classList.remove('section-hidden'), 10); // trigger animation
-  } else {
-    proj.classList.add('section-hidden'); 
-    proj.addEventListener('transitionend', () => proj.style.display = 'none', { once: true });
-  }
-});
+  projects.forEach(proj => {
+    if (category === 'all' || proj.classList.contains(category)) {
+      // Først gør element synligt og start animation
+      proj.style.display = 'block';
+      setTimeout(() => {
+        proj.classList.remove('section-hidden');
+      }, 20); // lille delay så transition kører
+      visibleCount++;
+    } else {
+      // Start fade/slide
+      proj.classList.add('section-hidden');
+      // Når animationen er færdig, fjern fra layout
+      proj.addEventListener('transitionend', function hideAfter() {
+        proj.style.display = 'none';
+        proj.removeEventListener('transitionend', hideAfter);
+      });
+    }
+  });
 
-  // Opdater “Ingen projekter” besked
-  const visibleProjects = Array.from(projects).filter(p => !p.classList.contains('section-hidden'));
-  if (visibleProjects.length === 0) {
-    noProjectsMsg.style.display = 'block';
-  } else {
-    noProjectsMsg.style.display = 'none';
-  }
+  // “Ingen projekter” besked
+  noProjectsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
 }
+
 </script>
 
 <style>
